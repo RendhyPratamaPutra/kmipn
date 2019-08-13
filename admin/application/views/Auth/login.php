@@ -32,13 +32,15 @@
                                 </div>
                             </div>
                             <hr />
-                            <?= form_open_multipart(); ?>
+                            <?= $this->session->flashdata('message'); ?>
+                            <hr />
+                            <?= form_open_multipart('Auth'); ?>
                             <div class="input-group">
-                                <input type="username" id="username" class="form-control" placeholder="Your Username">
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Your email">
                                 <span class="md-line"></span>
                             </div>
                             <div class="input-group">
-                                <input type="password" id="password" class="form-control" placeholder="Password">
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Password">
                                 <span class="md-line"></span>
                             </div>
                             <div class="row m-t-25 text-left">
