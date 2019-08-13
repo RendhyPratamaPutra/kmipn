@@ -11,7 +11,7 @@ class Admin extends CI_Controller
 
 	public function index()
 	{
-		$data['title'] = 'BERSIHNESIA';
-		echo "MENGHILANGKAN INDEX.PHP PADA CODEIGNITER | MALASNGODING.COM";
+		$data['title'] = 'DASHBOARD - BERSIHNESIA';
+		$this->load->view('Admin/dashbord', $data);
 	}
 }
