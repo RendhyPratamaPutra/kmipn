@@ -31,7 +31,7 @@
                                     <h3 class="text-center txt-primary">Sign In</h3>
                                 </div>
                             </div>
-                        
+
                             <?= $this->session->flashdata('message'); ?>
                             <hr />
                             <?= form_open_multipart('Auth'); ?>
@@ -66,8 +66,8 @@
                             <hr />
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p class="text-inverse text-left m-b-0">Thank you and enjoy our website.</p>
-                                    <p class="text-inverse text-left"><b>Your Authentication Team</b></p>
+                                    <p class="text-inverse text-left m-b-0">Jadi keren yang berguna.</p>
+                                    <p class="text-inverse text-left"><b>BERSIHNESIA untuk Pesisir Indonesia</b></p>
                                 </div>
                                 <div class="col-md-2">
                                     <img src="<?php echo base_url(''); ?>vendor/assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
