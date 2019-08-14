@@ -57,7 +57,7 @@ public class HomeActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         if (savedInstanceState==null){
-            navigation.setSelectedItemId(R.id.navigation);
+            navigation.setSelectedItemId(R.id.home);
         }
     }
 }
