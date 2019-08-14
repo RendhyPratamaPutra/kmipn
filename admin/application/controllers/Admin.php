@@ -56,7 +56,7 @@ class Admin extends CI_Controller
 			echo "<script>
                 alert('Event Dibuat!');
                 </script>";
-                echo '<script>window.location="tambah_event";</script>';
+                echo '<script>window.location="list_view";</script>';
 	}
 	public function list_event(){
 		$data['tb_event']=$this->db->get('tb_event')->result();
