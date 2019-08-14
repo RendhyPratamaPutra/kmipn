@@ -72,5 +72,6 @@ class Auth extends CI_Controller
         Logout Success
         </div>');
         redirect('Auth');
-    }
+	}
+	
 }
