@@ -31,7 +31,7 @@
                                     <h3 class="text-center txt-primary">Sign In</h3>
                                 </div>
                             </div>
-                            <hr />
+                        
                             <?= $this->session->flashdata('message'); ?>
                             <hr />
                             <?= form_open_multipart('Auth'); ?>

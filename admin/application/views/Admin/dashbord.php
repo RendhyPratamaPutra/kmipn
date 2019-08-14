@@ -163,7 +163,7 @@
                                        </a>
                                    </li>
                                    <li>
-                                       <a href="auth-normal-sign-in.html">
+                                       <a href="<?= base_url('Auth/logout'); ?>">
                                        <i class="ti-layout-sidebar-left"></i> Logout
                                    </a>
                                    </li>

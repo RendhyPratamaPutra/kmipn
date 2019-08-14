@@ -6,14 +6,15 @@ class Auth extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		
 		$this->load->library('form_validation');
 	}
 
 	public function index()
 	{
-		// if ($this->session->userdata('email')) {
-		// 	redirect('Auth');
-		// }
+		if ($this->session->userdata('email')) {
+			redirect('Auth');
+		}
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 
@@ -61,4 +62,15 @@ class Auth extends CI_Controller
 			redirect('Auth');
 		}
 	}
+
+	public function logout()
+    {
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('role_id');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Logout Success
+        </div>');
+        redirect('Auth');
+    }
 }
