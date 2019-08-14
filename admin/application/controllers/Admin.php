@@ -58,4 +58,9 @@ class Admin extends CI_Controller
                 </script>";
                 echo '<script>window.location="tambah_event";</script>';
 	}
+	public function list_event(){
+		$data['tb_event']=$this->db->get('tb_event')->result();
+		$this->load->view('Admin/v_list_event',$data);
+
+	}
 }
