@@ -73,7 +73,6 @@
                                     <img src="<?php echo base_url(''); ?>vendor/assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
                                 </div>
                             </div>
-
                         </div>
 
                         <!-- end of form -->
