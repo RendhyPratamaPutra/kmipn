@@ -19,10 +19,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_marginStart="13dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="Yahoo"/>
+                    android:src="@drawable/logo_bersihnesia_full"/>
 
         </LinearLayout>
 
