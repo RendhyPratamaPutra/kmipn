@@ -9,5 +9,6 @@ $this->load->database();
  function add_event($data,$table){
      $this->db->insert($table,$data);
 }
+
 }
 ?>
