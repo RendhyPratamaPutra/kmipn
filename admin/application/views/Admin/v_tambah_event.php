@@ -468,7 +468,7 @@
                                                         </div>
                                                         <div class="card-block">
                                                             <h4 class="sub-title">Basic Inputs</h4>
-                                                            <form>
+                                                            <?php echo form_open_multipart('Admin/add_event');?>
                                                                 <div class="form-group row">
                                                                     <label class="col-sm-2 col-form-label">Name Event</label>
                                                                     <div class="col-sm-10">
@@ -508,7 +508,7 @@
                                                                             </div>
                                                                             <div class="sub-title"></div>
                                                                             <div class="form-group row"><button class="btn btn-success btn-round">Success Button</button></div>
-                                                                        </form>
+                                                                            <?php echo form_close();?>
                                                                         
                                                                     </div>
                                                                 </div>

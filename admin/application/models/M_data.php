@@ -6,8 +6,8 @@ parent::__construct();
 // Your own constructor code
 $this->load->database();
 }
-public function add_event($data,$table){
+ function add_event($data,$table){
      $this->db->insert($table,$data);
 }
-
+}
 ?>
