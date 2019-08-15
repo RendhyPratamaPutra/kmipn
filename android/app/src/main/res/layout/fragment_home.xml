@@ -15,6 +15,7 @@
 
 
     <ScrollView
+        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <LinearLayout
@@ -173,6 +174,7 @@
             app:strokeWidth="1dp" />
 
         <LinearLayout
+            android:layout_marginTop="13dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -181,7 +183,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="13dp"
-                android:textStyle="italic|bold"
+                android:textStyle="bold"
                 android:text="@string/event"/>
 
             <TextView
@@ -196,16 +198,58 @@
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_marginTop="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:textStyle="bold"
+            android:text="@string/join_community"/>
+
+        <android.support.v7.widget.RecyclerView
             android:layout_marginTop="10dp"
             android:layout_marginStart="13dp"
             android:layout_width="match_parent"
-            android:layout_height="100dp"></android.support.v7.widget.RecyclerView>
+            android:layout_height="90dp" />
 
         <TextView
+            android:layout_marginTop="13dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="asdasds"
-            android:textSize="800dp"/>
+            android:layout_marginStart="13dp"
+            android:textStyle="bold"
+            android:text="@string/news"/>
+
+        <ImageView
+            android:id="@+id/imageNews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_banner"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:textSize="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="13dp"
+            android:text="@string/lorem_ipsum"/>
+
+        <Button
+            android:layout_marginTop="13dp"
+            android:padding="8dp"
+            android:textSize="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:background="@drawable/more_btn"
+            android:layout_gravity="end"
+            android:text="Selengkapnya" />
+
         </LinearLayout>
 
 
