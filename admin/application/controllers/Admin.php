@@ -56,11 +56,56 @@ class Admin extends CI_Controller
 			echo "<script>
                 alert('Event Dibuat!');
                 </script>";
-                echo '<script>window.location="list_view";</script>';
+                echo '<script>window.location="list_event";</script>';
 	}
 	public function list_event(){
 		$data['tb_event']=$this->db->get('tb_event')->result();
 		$this->load->view('Admin/v_list_event',$data);
 
+	}
+	public function view_add_information(){
+		$this->load->view('Admin/v_add_information');
+	}
+	public function add_information(){
+	$category=$this->input->post('category');	
+	$nama_information=$this->input->post('name_information');
+	$description=$this->input->post('description');
+	$date=$this->input->post('date');
+	$value=$this->input->post('value');
+	$photo=$_FILES['photo'];
+        if($gambar=''){}
+            else{
+                $a['upload_path']='./upload';
+                $a['allowed_types']='gif|jpg|png';
+
+                $this->load->library('upload',$a);
+                if(!$this->upload->do_upload('photo')){
+                    echo "<script>
+                    alert('Foto Terlalu Besar!');
+                    </script>";
+                    echo '<script>window.location="view_add_information";</script>';die();
+                }else{
+                    $photo=$this->upload->data('file_name');
+                }
+				}
+				$data=array(
+					'category'=>$category,
+					'name_information'=>$nama_information,
+					'description'=>$description,
+					'date'=>$date,
+					'photo'=>$photo,
+					'value'=>$value,
+					
+				);
+			$this->m_data->tambah_information($data,'information');
+			echo "<script>
+                alert('Informasi Dibuat!');
+                </script>";
+                echo '<script>window.location="list_item";</script>';
+
+	}
+	public function list_item(){
+		$data['item']=$this->db->query("SELECT * FROM information WHERE category='Barang'")->result();
+		$this->load->view('Admin/v_list_information_item',$data);
 	}
 }
