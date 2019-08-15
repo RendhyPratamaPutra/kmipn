@@ -14,10 +14,6 @@ function tambah_information($data,$table){
 }
 
 
-public function getById($id_event)
-{
-    return $this->db->get_where(('tb_event'), ["id_event" => $id_event])->row_array();
-}
 
 }
 ?>

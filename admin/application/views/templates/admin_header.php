@@ -17,7 +17,7 @@
     content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="codedthemes">
     <!-- Favicon icon -->
-    <link rel="icon" href="<?php echo base_url(''); ?>vendor/assets/images/logo.jpeg" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font--><link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>vendor/assets/css/bootstrap/css/bootstrap.min.css">
