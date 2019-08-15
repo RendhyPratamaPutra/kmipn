@@ -56,7 +56,7 @@ class Admin extends CI_Controller
 			echo "<script>
                 alert('Event Dibuat!');
                 </script>";
-                echo '<script>window.location="list_view";</script>';
+                echo '<script>window.location="list_event";</script>';
 	}
 	public function list_event(){
 		$data['tb_event']=$this->db->get('tb_event')->result();
@@ -71,13 +71,14 @@ class Admin extends CI_Controller
 	$nama_information=$this->input->post('name_information');
 	$description=$this->input->post('description');
 	$date=$this->input->post('date');
+	$value=$this->input->post('value');
 	$photo=$_FILES['photo'];
-        if($photo=''){}
+        if($gambar=''){}
             else{
-                $config['upload_path']='./upload';
-                $config['allowed_types']='gif|jpg|png';
+                $a['upload_path']='./upload';
+                $a['allowed_types']='gif|jpg|png';
 
-                $this->load->library('upload',$config);
+                $this->load->library('upload',$a);
                 if(!$this->upload->do_upload('photo')){
                     echo "<script>
                     alert('Foto Terlalu Besar!');
@@ -92,14 +93,19 @@ class Admin extends CI_Controller
 					'name_information'=>$nama_information,
 					'description'=>$description,
 					'date'=>$date,
-					'photo'=>$photo
+					'photo'=>$photo,
+					'value'=>$value,
 					
 				);
 			$this->m_data->tambah_information($data,'information');
 			echo "<script>
                 alert('Informasi Dibuat!');
                 </script>";
-                echo '<script>window.location="add_information";</script>';
+                echo '<script>window.location="list_item";</script>';
 
+	}
+	public function list_item(){
+		$data['item']=$this->db->query("SELECT * FROM information WHERE category='Barang'")->result();
+		$this->load->view('Admin/v_list_information_item',$data);
 	}
 }

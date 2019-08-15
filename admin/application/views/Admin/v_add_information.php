@@ -493,6 +493,13 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row">
+                                                                    <label class="col-sm-2 col-form-label">Point</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input  type="text" name="value" class="form-control"
+                                                                        placeholder="Nilai per-Kg"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group row">
                                                                     <label class="col-sm-2 col-form-label">Tanggal</label>
                                                                     <div class="col-sm-10">
                                                                     <input type="date" name="date" class="form-control"> 

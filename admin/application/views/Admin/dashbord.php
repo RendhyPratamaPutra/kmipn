@@ -92,7 +92,7 @@
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
-                                        <a href="accordion.html">
+                                        <a href="<?= base_url('Admin/list_item')?>">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Daftar Barang</span>
                                                 <span class="pcoded-mcaret"></span>
