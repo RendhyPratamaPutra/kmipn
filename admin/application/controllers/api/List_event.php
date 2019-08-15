@@ -13,6 +13,7 @@ class List_event extends REST_Controller
     {
         parent::__construct($config);
         $this->load->database();
+        $this->load->model("M_data");
     }
 
     function index_get()
@@ -24,12 +25,7 @@ class List_event extends REST_Controller
     function data_get($id_event = null)
     {
         if (!isset($id_event)) redirect('admin/admin');
-
-        $data["produk"] = $produk->getById($id_produk);
-        if (!$data["produk"]) show_404();
-
-        $this->load->view("admin/edit_produk", $data);
-        $event = $this->db->get('tb_event')->result();
+        $event = $this->db->get_where('tb_event', array('id_event' => $id_event))->result();
         $this->response(array("result" => $event, 200));
     }
 }
