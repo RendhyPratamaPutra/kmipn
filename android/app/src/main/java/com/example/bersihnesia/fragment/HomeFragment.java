@@ -1,8 +1,17 @@
 package com.example.bersihnesia.fragment;
 
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +24,7 @@ import com.synnapps.carouselview.ImageListener;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements LocationListener {
 
 
     public HomeFragment() {
@@ -30,12 +39,24 @@ public class HomeFragment extends Fragment {
             "Banner Ads", "Banner Ads 2"
     };
 
+    private LocationManager locationManager;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         CarouselView carouselView = view.findViewById(R.id.slideImage);
         carouselView.setPageCount(mImage.length);
+        locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED){
+
+        }
+
+        Location location = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
+        onLocationChanged(location);
+
         carouselView.setImageListener(new ImageListener() {
             @Override
             public void setImageForPosition(int position, ImageView imageView) {
@@ -45,4 +66,39 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onLocationChanged(Location location) {
+
+        double latiounde = location.getLatitude();
+        double asd = location.getLongitude();
+
+        Location loc1 = new Location("");
+        loc1.setLatitude(latiounde);
+        loc1.setLongitude(asd);
+
+        Location loc2 = new Location("");
+        loc2.setLatitude(-8.174230);
+        loc2.setLongitude(113.718665);
+
+        float distanceInMeters = loc1.distanceTo(loc2);
+
+        String tes = String.valueOf(distanceInMeters * 0.001);
+        Log.e("RAG", "onCreateView: "+tes );
+
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
+    }
 }
