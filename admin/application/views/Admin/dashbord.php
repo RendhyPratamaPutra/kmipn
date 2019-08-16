@@ -5,13 +5,13 @@
     <?php $this->load->view("templates/admin_header") ?>
 </head>
 
-  <body>
-	  <div class="fixed-button">
-		<a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
-			<i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
-		</a>
-	  </div>
-       <!-- Pre-loader start -->
+<body>
+    <div class="fixed-button">
+        <a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
+        </a>
+    </div>
+    <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="loader-track">
             <div class="loader-bar"></div>
@@ -22,248 +22,51 @@
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
 
-        <?php $this->load->view("templates/admin_navbar") ?>
+            <?php $this->load->view("templates/admin_navbar") ?>
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-                    <nav class="pcoded-navbar">
-                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
-                        <div class="pcoded-inner-navbar main-menu">
-                            
-                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Layout</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="active">
-                                    <a href="index.html">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Event</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="<?= base_url('Admin/list_event'); ?>">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Daftar Event</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?= base_url('Admin/tambah_event'); ?>">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Tambah Event</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Daftar Pengguna</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="form-elements-component.html">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Personal</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="bs-basic-table.html">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Komunitas</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Chart &amp; Maps</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Informasi</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                        <a href="<?= base_url('Admin/list_item')?>">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Daftar Barang</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="accordion.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Poin</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                            <a href="accordion.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Masukan Poin</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                            <a href="accordion.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tukar Poin</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?= base_url('Admin/tambah_event'); ?>">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Voucher &amp; Promo </span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">    
-                                            <a href="accordion.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tentang Kami</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?= base_url('Admin/view_add_information'); ?>">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Tambah Informasi</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="chart.html">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Chart</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="map-google.html">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Maps</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Pages</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="auth-normal-sign-in.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Login</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="auth-sign-up.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Register</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="sample-page.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Sample Page</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                            </ul>
-
-                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Other</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="pcoded-hasmenu ">
-                                    <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Menu Levels</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class="">
-                                            <a href="javascript:void(0)">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Menu Level 2.1</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class="pcoded-hasmenu ">
-                                            <a href="javascript:void(0)">
-                                                <span class="pcoded-micon"><i class="ti-direction-alt"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-22.main">Menu Level 2.2</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                            <ul class="pcoded-submenu">
-                                                <li class="">
-                                                    <a href="javascript:void(0)">
-                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-22.menu-level-31">Menu Level 3.1</span>
-                                                        <span class="pcoded-mcaret"></span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="">
-                                            <a href="javascript:void(0)">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-23">Menu Level 2.3</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+                    <?php $this->load->view("templates/admin_sidebar") ?>
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
                             <div class="main-body">
                                 <div class="page-wrapper">
 
                                     <div class="page-body">
-                                      <div class="row">
+                                        <div class="row">
 
                                             <!-- order-card start -->
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-blue order-card">
+                                                    <?php foreach($personal as $a) { ?>
                                                     <div class="card-block">
-                                                        <h6 class="m-b-20">Orders Received</h6>
-                                                        <h2 class="text-right"><i class="ti-shopping-cart f-left"></i><span>486</span></h2>
+                                                        <h6 class="m-b-20">USER BERSIHNESIA</h6>
+                                                        <h2 class="text-right"><i class="ti-shopping-cart f-left"></i><span><?= $a->jumlah_personal ?></span></h2>
                                                         <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
                                                     </div>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-green order-card">
+                                                <?php foreach($community as $a) { ?>
                                                     <div class="card-block">
-                                                        <h6 class="m-b-20">Total Sales</h6>
-                                                        <h2 class="text-right"><i class="ti-tag f-left"></i><span>1641</span></h2>
+                                                        <h6 class="m-b-20">COMMUNITY BERSIHNESIA</h6>
+                                                        <h2 class="text-right"><i class="ti-tag f-left"></i><span><?= $a->jumlah_community ?></span></h2>
                                                         <p class="m-b-0">This Month<span class="f-right">213</span></p>
                                                     </div>
+                                                <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-yellow order-card">
+                                                    <?php foreach($event as $a) { ?>
                                                     <div class="card-block">
-                                                        <h6 class="m-b-20">Revenue</h6>
-                                                        <h2 class="text-right"><i class="ti-reload f-left"></i><span>$42,562</span></h2>
+                                                        <h6 class="m-b-20">EVENT BERSIHNESIA</h6>
+                                                        <h2 class="text-right"><i class="ti-reload f-left"></i><span><?= $a->jumlah_event ?></span></h2>
                                                         <p class="m-b-0">This Month<span class="f-right">$5,032</span></p>
                                                     </div>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-xl-3">
@@ -276,7 +79,6 @@
                                                 </div>
                                             </div>
                                             <!-- order-card end -->
-
                                             <!-- statustic and process start -->
                                             <div class="col-lg-8 col-md-12">
                                                 <div class="card">
@@ -319,7 +121,7 @@
                                                 </div>
                                             </div>
                                             <!-- statustic and process end -->
-											<!-- tabs card start -->
+                                            <!-- tabs card start -->
                                             <div class="col-sm-12">
                                                 <div class="card tabs-card">
                                                     <div class="card-block p-0">
@@ -539,7 +341,7 @@
                                                         </div>
                                                         <h6 class="f-w-600 m-t-25 m-b-10">Alessa Robert</h6>
                                                         <p class="text-muted">Active | Male | Born 23.05.1992</p>
-                                                        <hr/>
+                                                        <hr />
                                                         <p class="text-muted m-t-15">Activity Level: 87%</p>
                                                         <ul class="list-unstyled activity-leval">
                                                             <li class="active"></li>
@@ -565,7 +367,7 @@
                                                             </div>
                                                         </div>
                                                         <p class="m-t-15 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                                        <hr/>
+                                                        <hr />
                                                         <div class="row justify-content-center user-social-link">
                                                             <div class="col-auto"><a href="#!"><i class="fa fa-facebook text-facebook"></i></a></div>
                                                             <div class="col-auto"><a href="#!"><i class="fa fa-twitter text-twitter"></i></a></div>
@@ -624,8 +426,8 @@
                                                                 <div class="feed-user-img">
                                                                     <img src="<?php echo base_url(''); ?>vendor/assets/images/avatar-2.jpg" class="img-radius " alt="User-Profile-Image">
                                                                 </div>
-                                                                <h6><span class="label label-primary">comment</span> abc posted a task:  <span class="text-c-green">Design a new Homepage</span>  <small class="text-muted">6 hours ago</small></h6>
-                                                                <p class="m-b-15 m-t-15"hii <b> @everone</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                                                <h6><span class="label label-primary">comment</span> abc posted a task: <span class="text-c-green">Design a new Homepage</span> <small class="text-muted">6 hours ago</small></h6>
+                                                                <p class="m-b-15 m-t-15" hii <b> @everone</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                                             </li>
                                                             <li class="active-feed">
                                                                 <div class="feed-user-img">
@@ -655,7 +457,7 @@
 
         <!-- Warning Section Starts -->
         <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
+        <!--[if lt IE 9]>
 <div class="ie-warning">
     <h1>Warning!!</h1>
     <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
@@ -696,6 +498,6 @@
     <p>Sorry for the inconvenience!</p>
 </div>
 <![endif]-->
-<!-- Warning Section Ends -->
-<!-- Required Jquery -->
-<?php $this->load->view("templates/admin_footer") ?>
+        <!-- Warning Section Ends -->
+        <!-- Required Jquery -->
+        <?php $this->load->view("templates/admin_footer") ?>
