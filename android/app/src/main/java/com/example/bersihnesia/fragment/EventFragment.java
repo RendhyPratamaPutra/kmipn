@@ -1,6 +1,7 @@
 package com.example.bersihnesia.fragment;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
