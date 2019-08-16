@@ -2,7 +2,6 @@ package com.example.bersihnesia.fragment;
 
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -19,12 +18,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.bersihnesia.R;
 import com.example.bersihnesia.adapter.EventAdapter;
 import com.example.bersihnesia.apihelper.BaseApiService;
 import com.example.bersihnesia.apihelper.UtilsApi;
+import com.example.bersihnesia.listener.ItemClickSupport;
 import com.example.bersihnesia.model.Event;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
@@ -65,6 +64,7 @@ public class HomeFragment extends Fragment implements LocationListener {
     RecyclerView rv_event;
     Context mContext;
     public static final String EXTRA_MOVIE = "arrayList";
+    public static final String STATE_EVENT = "state_event";
     EventAdapter eventAdapter;
 
     @Override
@@ -73,14 +73,6 @@ public class HomeFragment extends Fragment implements LocationListener {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         CarouselView carouselView = view.findViewById(R.id.slideImage);
         carouselView.setPageCount(mImage.length);
-        mContext = getContext();
-        eventAdapter = new EventAdapter(mContext);
-        mApiService = UtilsApi.getAPIService();
-        rv_event = view.findViewById(R.id.rv_event);
-        rv_event.setHasFixedSize(true);
-        LinearLayoutManager layoutManager
-                = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        rv_event.setLayoutManager(layoutManager);
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         boolean permissionGranted = ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
 
@@ -91,6 +83,15 @@ public class HomeFragment extends Fragment implements LocationListener {
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 200);
         }
 
+        // For Event
+        mContext = getContext();
+        eventAdapter = new EventAdapter(mContext);
+        mApiService = UtilsApi.getAPIService();
+        rv_event = view.findViewById(R.id.rv_event);
+        rv_event.setHasFixedSize(true);
+        LinearLayoutManager layoutManager
+                = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        rv_event.setLayoutManager(layoutManager);
         if (savedInstanceState==null){
             getEvent();
         } else {
@@ -98,6 +99,16 @@ public class HomeFragment extends Fragment implements LocationListener {
             eventAdapter.setListEvent(arrayList);
             rv_event.setAdapter(eventAdapter);
         }
+        ItemClickSupport.addTo(rv_event).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                EventFragment nextFrag= new EventFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container_layout, nextFrag, "findThisFragment")
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
 
 
 
