@@ -20,4 +20,7 @@
     <string name="join_community">Join Komunitas</string>
     <string name="news">News</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis at cupiditate fugit obcaecati omnis, exercitationem temporibus sit nulla quisquam earum ratione repellendus pariatur alias facere dicta quia iure reiciendis expedita.</string>
+    <string name="title_activity_event">EventActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

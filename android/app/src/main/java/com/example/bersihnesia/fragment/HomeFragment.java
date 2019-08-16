@@ -2,9 +2,7 @@ package com.example.bersihnesia.fragment;
 
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -20,10 +18,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.bersihnesia.R;
-import com.example.bersihnesia.activity.DetailEventActivity;
 import com.example.bersihnesia.adapter.EventAdapter;
 import com.example.bersihnesia.apihelper.BaseApiService;
 import com.example.bersihnesia.apihelper.UtilsApi;
@@ -106,9 +102,11 @@ public class HomeFragment extends Fragment implements LocationListener {
         ItemClickSupport.addTo(rv_event).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                Intent intent = new Intent(getActivity(), DetailEventActivity.class);
-                intent.putExtra(STATE_EVENT, arrayList.get(position));
-                startActivity(intent);
+                EventFragment nextFrag= new EventFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container_layout, nextFrag, "findThisFragment")
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 
