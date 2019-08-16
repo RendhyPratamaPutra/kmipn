@@ -23,4 +23,8 @@
     <string name="title_activity_event">EventActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="registrasi">Registrasi</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="no_hp">No Hp</string>
+    <string name="upload_foto">Upload Foto</string>
 </resources>
