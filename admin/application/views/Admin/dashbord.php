@@ -73,7 +73,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="bs-basic-table.html">
+                                    <a href="<?= base_url('personal/personal_form'); ?>">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Komunitas</span>
                                         <span class="pcoded-mcaret"></span>
