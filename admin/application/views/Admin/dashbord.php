@@ -5,13 +5,13 @@
     <?php $this->load->view("templates/admin_header") ?>
 </head>
 
-  <body>
-	  <div class="fixed-button">
-		<a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
-			<i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
-		</a>
-	  </div>
-       <!-- Pre-loader start -->
+<body>
+    <div class="fixed-button">
+        <a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
+        </a>
+    </div>
+    <!-- Pre-loader start -->
     <div class="theme-loader">
         <div class="loader-track">
             <div class="loader-bar"></div>
@@ -22,9 +22,10 @@
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
 
-        <?php $this->load->view("templates/admin_navbar") ?>
+            <?php $this->load->view("templates/admin_navbar") ?>
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
+<<<<<<< HEAD
                     <nav class="pcoded-navbar">
                         <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                         <div class="pcoded-inner-navbar main-menu">
@@ -230,13 +231,16 @@
                             </ul>
                         </div>
                     </nav>
+=======
+                    <?php $this->load->view("templates/admin_sidebar") ?>
+>>>>>>> 8f5373b6462d9276aef402638c14103942d6d3ca
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
                             <div class="main-body">
                                 <div class="page-wrapper">
 
                                     <div class="page-body">
-                                      <div class="row">
+                                        <div class="row">
 
                                             <!-- order-card start -->
                                             <div class="col-md-6 col-xl-3">
@@ -319,7 +323,7 @@
                                                 </div>
                                             </div>
                                             <!-- statustic and process end -->
-											<!-- tabs card start -->
+                                            <!-- tabs card start -->
                                             <div class="col-sm-12">
                                                 <div class="card tabs-card">
                                                     <div class="card-block p-0">
@@ -539,7 +543,7 @@
                                                         </div>
                                                         <h6 class="f-w-600 m-t-25 m-b-10">Alessa Robert</h6>
                                                         <p class="text-muted">Active | Male | Born 23.05.1992</p>
-                                                        <hr/>
+                                                        <hr />
                                                         <p class="text-muted m-t-15">Activity Level: 87%</p>
                                                         <ul class="list-unstyled activity-leval">
                                                             <li class="active"></li>
@@ -565,7 +569,7 @@
                                                             </div>
                                                         </div>
                                                         <p class="m-t-15 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                                        <hr/>
+                                                        <hr />
                                                         <div class="row justify-content-center user-social-link">
                                                             <div class="col-auto"><a href="#!"><i class="fa fa-facebook text-facebook"></i></a></div>
                                                             <div class="col-auto"><a href="#!"><i class="fa fa-twitter text-twitter"></i></a></div>
@@ -624,8 +628,8 @@
                                                                 <div class="feed-user-img">
                                                                     <img src="<?php echo base_url(''); ?>vendor/assets/images/avatar-2.jpg" class="img-radius " alt="User-Profile-Image">
                                                                 </div>
-                                                                <h6><span class="label label-primary">comment</span> abc posted a task:  <span class="text-c-green">Design a new Homepage</span>  <small class="text-muted">6 hours ago</small></h6>
-                                                                <p class="m-b-15 m-t-15"hii <b> @everone</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                                                <h6><span class="label label-primary">comment</span> abc posted a task: <span class="text-c-green">Design a new Homepage</span> <small class="text-muted">6 hours ago</small></h6>
+                                                                <p class="m-b-15 m-t-15" hii <b> @everone</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                                             </li>
                                                             <li class="active-feed">
                                                                 <div class="feed-user-img">
@@ -655,7 +659,7 @@
 
         <!-- Warning Section Starts -->
         <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
+        <!--[if lt IE 9]>
 <div class="ie-warning">
     <h1>Warning!!</h1>
     <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
@@ -696,6 +700,6 @@
     <p>Sorry for the inconvenience!</p>
 </div>
 <![endif]-->
-<!-- Warning Section Ends -->
-<!-- Required Jquery -->
-<?php $this->load->view("templates/admin_footer") ?>
+        <!-- Warning Section Ends -->
+        <!-- Required Jquery -->
+        <?php $this->load->view("templates/admin_footer") ?>
