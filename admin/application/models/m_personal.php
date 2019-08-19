@@ -6,11 +6,10 @@ class m_personal extends CI_Model
 
 	private $primary = "id_personal";
 
-	function get_all($group_user){
+	function get_all(){
 
 		#Get all data users
-		$this->db->where("GROUP_USER",$group_user);
-		$data=$this->db->get($this->table_name);
+		$data=$this->db->get('personal');
 		return $data->result();
 
 	}

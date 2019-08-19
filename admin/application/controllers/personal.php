@@ -8,21 +8,16 @@ class personal extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('personal_model');
+        $this->load->model('m_personal');
         $this->load->library('form_validation');        
-	$this->load->library('datatables');
+    
     }
 
     public function index()
     {
-        $personal = $this->Personal_model->get_all();
-        $data = array(
-            'personal_data' => $personal,
-        );
+     $data['personal'] = $this->model('m_personal')->result();
+        $this->load->view('personal/personal_list');
 
-        $this->load->view('template/header');
-        $this->load->view('personal/personal_list', $data);
-        $this->load->view('template/footer');
     } 
     
     public function json() {
