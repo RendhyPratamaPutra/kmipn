@@ -13,7 +13,7 @@ class personal extends CI_Controller
 
     public function index()
     {
-        $data['transaksi'] = $this->m_personal->get_all()->result();
+        $data['personal'] = $this->m_personal->get_all()->result();
         $this->load->view('personal/personal_list', $data);
     }
 
