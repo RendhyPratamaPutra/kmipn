@@ -37,29 +37,35 @@
                                             <!-- order-card start -->
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-blue order-card">
+                                                    <?php foreach($personal as $a) { ?>
                                                     <div class="card-block">
                                                         <h6 class="m-b-20">Orders Received</h6>
-                                                        <h2 class="text-right"><i class="ti-shopping-cart f-left"></i><span>486</span></h2>
+                                                        <h2 class="text-right"><i class="ti-shopping-cart f-left"></i><span><?= $a->jumlah_personal ?></span></h2>
                                                         <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
                                                     </div>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-green order-card">
+                                                <?php foreach($community as $a) { ?>
                                                     <div class="card-block">
                                                         <h6 class="m-b-20">Total Sales</h6>
-                                                        <h2 class="text-right"><i class="ti-tag f-left"></i><span>1641</span></h2>
+                                                        <h2 class="text-right"><i class="ti-tag f-left"></i><span><?= $a->jumlah_community ?></span></h2>
                                                         <p class="m-b-0">This Month<span class="f-right">213</span></p>
                                                     </div>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-yellow order-card">
+                                                <?php foreach($event as $a) { ?>
                                                     <div class="card-block">
                                                         <h6 class="m-b-20">Revenue</h6>
-                                                        <h2 class="text-right"><i class="ti-reload f-left"></i><span>$42,562</span></h2>
+                                                        <h2 class="text-right"><i class="ti-reload f-left"></i><span><?= $a->jumlah_event ?></span></h2>
                                                         <p class="m-b-0">This Month<span class="f-right">$5,032</span></p>
                                                     </div>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-xl-3">
