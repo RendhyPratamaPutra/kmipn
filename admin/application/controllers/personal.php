@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class daftar_pengguna extends CI_Controller
+class personal extends CI_Controller
 {
     function __construct()
     {
@@ -173,7 +173,7 @@ class daftar_pengguna extends CI_Controller
     	$this->form_validation->set_rules('PASSWORD', 'password', 'trim|required');
     	$this->form_validation->set_rules('POINT', 'photo', 'trim|required');	
     	$this->form_validation->set_rules('CREATED', 'created', 'trim|required');
-    	$this->form_validation->set_rules('id_peesonal', 'id_personal', 'trim');
+    	$this->form_validation->set_rules('id_personal', 'id_personal', 'trim');
     	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
