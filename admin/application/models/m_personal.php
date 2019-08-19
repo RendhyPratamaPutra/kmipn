@@ -9,9 +9,9 @@ class m_personal extends CI_Model
 	function get_all($personal){
 
 		#Get all data users
-		$this->db->where("personal",$personal);
-		$data=$this->db->get($this->table_name);
-		return $data->result();
+	
+			return  $this->db->get('personal');
+		
 
 	}
 
