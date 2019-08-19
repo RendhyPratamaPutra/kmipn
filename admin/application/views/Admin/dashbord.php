@@ -66,7 +66,7 @@
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Daftar Pengguna</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li>
-                                    <a href="form-elements-component.html">
+                                <a href="<?= base_url('personal/personal_list'); ?>">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Personal</span>
                                         <span class="pcoded-mcaret"></span>
@@ -83,7 +83,7 @@
                             </ul>
 
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Chart &amp; Maps</div>
-                            <ul class="pcoded-item pcoded-left-item">
+                            <ul class="pcoded-item pcoded-left-read">
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
