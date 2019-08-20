@@ -72,30 +72,47 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Name Information</th>
-                                                            <th>Description</th>
-                                                            <th>Photo</th>
-                                                            <th>Date</th>
+                                                            <th>USERNAME</th>
+                                                            <th>NAME</th>
+                                                            <th>GENDER</th>
+                                                            <th>ADDRESS</th>
+                                                            <th>CONTAC PERSON</th>
+                                                            <th>EMAIL</th>
+                                                            <th>PASSWORD</th>
+                                                            <th>POINT</th>
+                                                            <th>CREATED</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <?php
                                                         $no=1;
-                                                        foreach($item as $i)
-                                                        {
-                                                        ?>
-                                                        <tr>
-                                                            <th><?= $no++?></th>
-                                                            <td><?= $i->name_information?></td>
-                                                            <td><?= $i->description?></td>
-                                                            <td><img src="<?php echo base_url('./upload/'.$i->photo) ?>"  width="100" /></td>
-                                                            <td><?= $i->date?></td>
-                                                            <td><button class="btn btn-danger btn-round">Hapus</button></td>
-                                                        </tr>
-                                                        <?php
-                                                        
-                                                    }?>
+                                                        oreach ($users_data as $users)
+            {
+                ?>
+                <tr>
+			<td width="80px"><?php echo ++$start ?></td>
+			<td><?php echo $users->USERNAME ?></td>
+			<td><?php echo $users->NAME ?></td>
+			<td><?php echo $users->GENDER ?></td>
+			<td><?php echo $users->ADDRESS ?></td>
+			<td><?php echo $users->CONTAC_PERSON ?></td>
+			<td><?php echo $users->EMAIL ?></td>
+			<td><?php echo $users->PASSWORD ?></td>
+			<td><?php echo $users->POINT ?></td>
+			<td><?php echo $users->CREATED ?></td>
+			<td style="text-align:center" width="200px">
+				<?php 
+				echo anchor(site_url('users/read/'.$users->id_personal),'Read'); 
+				echo ' | '; 
+				echo anchor(site_url('users/update/'.$users->id_personal),'Update'); 
+				echo ' | '; 
+				echo anchor(site_url('users/delete/'.$users->id_personal),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				?>
+			</td>
+		</tr>
+                <?php
+            }
                                                     </tbody>
                                                 </table>
                                             </div>

@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        buildConfigField("String", "URL", '"http://192.168.43.145/kmipn/admin/"')
+        buildConfigField("String", "URL", '"http://jwpdigitalent.com/gagas/"')
         applicationId "com.example.bersihnesia"
         minSdkVersion 21
         targetSdkVersion 28

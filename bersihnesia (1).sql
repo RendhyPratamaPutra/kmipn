@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Agu 2019 pada 08.39
+-- Waktu pembuatan: 19 Agu 2019 pada 06.04
 -- Versi server: 10.1.31-MariaDB
 -- Versi PHP: 7.2.3
 
@@ -63,6 +63,36 @@ INSERT INTO `information` (`id_information`, `name_information`, `description`, 
 (14, 'Botol Bekas', 'Asiyap', 0x70616e7461692d63656d6172612d62616e797577616e67692e706e67, '2019-08-15', NULL, 'Voucher & Promo'),
 (15, 'Botol Bekas', 'Poin yang diperoleh lumayan besar', 0x70656c75616e675f6269736e69735f626f746f6c5f706c617374696b5f62656b61732e6a7067, '2019-08-15', NULL, 'Barang'),
 (17, 'Kaca', 'Cukup tinggi poinya', 0x7065636168616e5f6b616361312e6a7067, '2019-08-15', '10', 'Barang');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `jumlah_community`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `jumlah_community` (
+`jumlah_community` bigint(21)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `jumlah_event`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `jumlah_event` (
+`jumlah_event` bigint(21)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `jumlah_personal`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `jumlah_personal` (
+`jumlah_personal` bigint(21)
+);
 
 -- --------------------------------------------------------
 
@@ -130,6 +160,33 @@ CREATE TABLE `trans_event` (
   `id_event` int(11) NOT NULL,
   `id_personal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `jumlah_community`
+--
+DROP TABLE IF EXISTS `jumlah_community`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `jumlah_community`  AS  select count(`community`.`id_community`) AS `jumlah_community` from `community` ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `jumlah_event`
+--
+DROP TABLE IF EXISTS `jumlah_event`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `jumlah_event`  AS  select count(`tb_event`.`id_event`) AS `jumlah_event` from `tb_event` ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `jumlah_personal`
+--
+DROP TABLE IF EXISTS `jumlah_personal`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `jumlah_personal`  AS  select count(`personal`.`id_personal`) AS `jumlah_personal` from `personal` ;
 
 --
 -- Indexes for dumped tables
@@ -209,7 +266,7 @@ ALTER TABLE `status_member`
 -- AUTO_INCREMENT untuk tabel `tb_event`
 --
 ALTER TABLE `tb_event`
-  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `trans_event`

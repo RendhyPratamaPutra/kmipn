@@ -23,4 +23,11 @@ class List_community extends REST_Controller
         $this->response(array("result" => $event, 200));
     }
 
+
+    function data_get($id_event = null)
+    {
+        if (!isset($id_event)) redirect('admin/admin');
+        $event = $this->db->get_where('community', array('id_community' => $id_event))->result();
+        $this->response(array("result" => $event, 200));
+    }
 }

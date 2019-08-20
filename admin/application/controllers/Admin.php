@@ -15,6 +15,9 @@ class Admin extends CI_Controller
 	public function index()
 	{
 		$data['title'] = 'DASHBOARD - BERSIHNESIA';
+		$data['personal'] = $this->db->get('jumlah_personal')->result();
+		$data['community'] = $this->db->get('jumlah_community')->result();
+		$data['event'] = $this->db->get('jumlah_event')->result();
 		$this->load->view('Admin/dashbord', $data);
 	}
 	public function tambah_event(){
@@ -107,5 +110,11 @@ class Admin extends CI_Controller
 	public function list_item(){
 		$data['item']=$this->db->query("SELECT * FROM information WHERE category='Barang'")->result();
 		$this->load->view('Admin/v_list_information_item',$data);
+	}
+
+	function jumlah_personal(){
+		
+
+		
 	}
 }

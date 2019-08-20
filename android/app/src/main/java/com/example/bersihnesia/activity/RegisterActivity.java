@@ -147,7 +147,6 @@ public class RegisterActivity extends AppCompatActivity {
         } catch (Exception e) {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
         }
-
     }
     private void uploadFile() {
 
@@ -184,5 +183,4 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-
 }
