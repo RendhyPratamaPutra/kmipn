@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Agu 2019 pada 06.04
--- Versi server: 10.1.31-MariaDB
--- Versi PHP: 7.2.3
+-- Generation Time: Aug 20, 2019 at 07:16 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `community`
+-- Table structure for table `community`
 --
 
 CREATE TABLE `community` (
@@ -42,7 +42,7 @@ CREATE TABLE `community` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `information`
+-- Table structure for table `information`
 --
 
 CREATE TABLE `information` (
@@ -56,7 +56,7 @@ CREATE TABLE `information` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `information`
+-- Dumping data for table `information`
 --
 
 INSERT INTO `information` (`id_information`, `name_information`, `description`, `photo`, `date`, `value`, `category`) VALUES
@@ -67,8 +67,8 @@ INSERT INTO `information` (`id_information`, `name_information`, `description`, 
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `jumlah_community`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `jumlah_community`
+-- (See below for the actual view)
 --
 CREATE TABLE `jumlah_community` (
 `jumlah_community` bigint(21)
@@ -77,8 +77,8 @@ CREATE TABLE `jumlah_community` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `jumlah_event`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `jumlah_event`
+-- (See below for the actual view)
 --
 CREATE TABLE `jumlah_event` (
 `jumlah_event` bigint(21)
@@ -87,8 +87,8 @@ CREATE TABLE `jumlah_event` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `jumlah_personal`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `jumlah_personal`
+-- (See below for the actual view)
 --
 CREATE TABLE `jumlah_personal` (
 `jumlah_personal` bigint(21)
@@ -97,7 +97,7 @@ CREATE TABLE `jumlah_personal` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `personal`
+-- Table structure for table `personal`
 --
 
 CREATE TABLE `personal` (
@@ -112,7 +112,7 @@ CREATE TABLE `personal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `personal`
+-- Dumping data for table `personal`
 --
 
 INSERT INTO `personal` (`id_personal`, `name`, `address`, `contac person`, `email`, `password`, `point`, `role_id`) VALUES
@@ -121,7 +121,7 @@ INSERT INTO `personal` (`id_personal`, `name`, `address`, `contac person`, `emai
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `status_member`
+-- Table structure for table `status_member`
 --
 
 CREATE TABLE `status_member` (
@@ -134,7 +134,22 @@ CREATE TABLE `status_member` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_event`
+-- Table structure for table `tb_announcement`
+--
+
+CREATE TABLE `tb_announcement` (
+  `id_announcement` bigint(20) NOT NULL,
+  `id_community` int(11) DEFAULT NULL,
+  `id_personal` int(11) DEFAULT NULL,
+  `title` varchar(128) DEFAULT NULL,
+  `announcement` text,
+  `picture` blob
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_event`
 --
 
 CREATE TABLE `tb_event` (
@@ -152,7 +167,7 @@ CREATE TABLE `tb_event` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `trans_event`
+-- Table structure for table `trans_event`
 --
 
 CREATE TABLE `trans_event` (
@@ -164,7 +179,7 @@ CREATE TABLE `trans_event` (
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `jumlah_community`
+-- Structure for view `jumlah_community`
 --
 DROP TABLE IF EXISTS `jumlah_community`;
 
@@ -173,7 +188,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `jumlah_event`
+-- Structure for view `jumlah_event`
 --
 DROP TABLE IF EXISTS `jumlah_event`;
 
@@ -182,7 +197,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `jumlah_personal`
+-- Structure for view `jumlah_personal`
 --
 DROP TABLE IF EXISTS `jumlah_personal`;
 
@@ -193,26 +208,26 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 
 --
--- Indeks untuk tabel `community`
+-- Indexes for table `community`
 --
 ALTER TABLE `community`
   ADD PRIMARY KEY (`id_community`),
   ADD KEY `id_personal` (`id_personal`);
 
 --
--- Indeks untuk tabel `information`
+-- Indexes for table `information`
 --
 ALTER TABLE `information`
   ADD PRIMARY KEY (`id_information`);
 
 --
--- Indeks untuk tabel `personal`
+-- Indexes for table `personal`
 --
 ALTER TABLE `personal`
   ADD PRIMARY KEY (`id_personal`);
 
 --
--- Indeks untuk tabel `status_member`
+-- Indexes for table `status_member`
 --
 ALTER TABLE `status_member`
   ADD PRIMARY KEY (`id_status`),
@@ -220,14 +235,22 @@ ALTER TABLE `status_member`
   ADD KEY `id_personal` (`id_personal`);
 
 --
--- Indeks untuk tabel `tb_event`
+-- Indexes for table `tb_announcement`
+--
+ALTER TABLE `tb_announcement`
+  ADD PRIMARY KEY (`id_announcement`),
+  ADD KEY `id_community` (`id_community`),
+  ADD KEY `id_personal` (`id_personal`);
+
+--
+-- Indexes for table `tb_event`
 --
 ALTER TABLE `tb_event`
   ADD PRIMARY KEY (`id_event`),
   ADD KEY `id_community` (`id_community`);
 
 --
--- Indeks untuk tabel `trans_event`
+-- Indexes for table `trans_event`
 --
 ALTER TABLE `trans_event`
   ADD PRIMARY KEY (`id_trans_event`),
@@ -235,70 +258,83 @@ ALTER TABLE `trans_event`
   ADD KEY `id_personal` (`id_personal`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `community`
+-- AUTO_INCREMENT for table `community`
 --
 ALTER TABLE `community`
   MODIFY `id_community` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `information`
+-- AUTO_INCREMENT for table `information`
 --
 ALTER TABLE `information`
   MODIFY `id_information` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `personal`
+-- AUTO_INCREMENT for table `personal`
 --
 ALTER TABLE `personal`
   MODIFY `id_personal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `status_member`
+-- AUTO_INCREMENT for table `status_member`
 --
 ALTER TABLE `status_member`
   MODIFY `id_status` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_event`
+-- AUTO_INCREMENT for table `tb_announcement`
+--
+ALTER TABLE `tb_announcement`
+  MODIFY `id_announcement` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_event`
 --
 ALTER TABLE `tb_event`
   MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `trans_event`
+-- AUTO_INCREMENT for table `trans_event`
 --
 ALTER TABLE `trans_event`
   MODIFY `id_trans_event` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `community`
+-- Constraints for table `community`
 --
 ALTER TABLE `community`
   ADD CONSTRAINT `community_ibfk_1` FOREIGN KEY (`id_personal`) REFERENCES `personal` (`id_personal`);
 
 --
--- Ketidakleluasaan untuk tabel `status_member`
+-- Constraints for table `status_member`
 --
 ALTER TABLE `status_member`
   ADD CONSTRAINT `status_member_ibfk_1` FOREIGN KEY (`id_community`) REFERENCES `community` (`id_community`),
   ADD CONSTRAINT `status_member_ibfk_2` FOREIGN KEY (`id_personal`) REFERENCES `personal` (`id_personal`);
 
 --
--- Ketidakleluasaan untuk tabel `tb_event`
+-- Constraints for table `tb_announcement`
+--
+ALTER TABLE `tb_announcement`
+  ADD CONSTRAINT `tb_announcement_ibfk_1` FOREIGN KEY (`id_community`) REFERENCES `community` (`id_community`),
+  ADD CONSTRAINT `tb_announcement_ibfk_2` FOREIGN KEY (`id_personal`) REFERENCES `personal` (`id_personal`);
+
+--
+-- Constraints for table `tb_event`
 --
 ALTER TABLE `tb_event`
   ADD CONSTRAINT `tb_event_ibfk_1` FOREIGN KEY (`id_community`) REFERENCES `community` (`id_community`);
 
 --
--- Ketidakleluasaan untuk tabel `trans_event`
+-- Constraints for table `trans_event`
 --
 ALTER TABLE `trans_event`
   ADD CONSTRAINT `trans_event_ibfk_1` FOREIGN KEY (`id_event`) REFERENCES `tb_event` (`id_event`),
