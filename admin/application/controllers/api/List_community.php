@@ -17,7 +17,10 @@ class List_community extends REST_Controller
 
     function index_get()
     {
-        $event = $this->db->get('community')->result();
+        $this->db->select('*');
+        $this->db->join('personal', 'personal.id_personal = community.id_personal');
+        $this->db->from('community');
+        $event = $this->db->get()->result();
         $this->response(array("result" => $event, 200));
     }
 
