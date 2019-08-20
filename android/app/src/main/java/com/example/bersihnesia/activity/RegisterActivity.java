@@ -1,5 +1,6 @@
 package com.example.bersihnesia.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -8,6 +9,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telecom.Call;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -22,6 +24,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
+import com.example.bersihnesia.MainActivity;
 import com.example.bersihnesia.R;
 import com.example.bersihnesia.apihelper.BaseApiService;
 import com.example.bersihnesia.apihelper.RetrofitClient;
@@ -44,6 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
     Bitmap bitmap;
     Button registrasi, pilih;
     BaseApiService mApiService;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,16 +82,24 @@ public class RegisterActivity extends AppCompatActivity {
         registrasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog=new ProgressDialog(RegisterActivity.this);
+                progressDialog.setMessage("Loading...");
+                progressDialog.setCancelable(false);
+                progressDialog.show();
                 uploadFile();
-                retrofit2.Call<PostPersonal> postPersonalCall = mApiService.postPersonal(nama.getText().toString(), email.getText().toString(), address.getText().toString(), jk.getSelectedItem().toString(), no_hp.getText().toString(), password.getText().toString(), name_photo.getText().toString());
+                retrofit2.Call<PostPersonal> postPersonalCall = mApiService.postPersonal(nama.getText().toString(), address.getText().toString(),no_hp.getText().toString(),email.getText().toString(),  password.getText().toString(), jk.getSelectedItem().toString(), name_photo.getText().toString());
                 postPersonalCall.enqueue(new Callback() {
                     @Override
                     public void onResponse(retrofit2.Call call, Response response) {
+                        progressDialog.dismiss();
                         Toast.makeText(RegisterActivity.this, "Berhasil", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(RegisterActivity.this,LoginActivity.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onFailure(retrofit2.Call call, Throwable t) {
+                        progressDialog.dismiss();
                         Toast.makeText(RegisterActivity.this, "Gagal Daftar", Toast.LENGTH_SHORT).show();
 
                     }
