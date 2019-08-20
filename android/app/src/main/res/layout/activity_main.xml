@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -33,6 +33,7 @@
 
 
     <Button
+        android:layout_below="@id/button"
         android:onClick="asd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,5 +45,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:onClick="information"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/button"
+        android:text="Information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:onClick="tab"
+        android:layout_below="@id/button"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/button"
+        android:text="Tablayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/daftar"
+        android:onClick="daftar"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:text="Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_below="@+id/daftar"
+        android:onClick="buat"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        android:text="buat komunitas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

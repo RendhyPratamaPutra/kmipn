@@ -18,7 +18,7 @@ class Register_community extends REST_Controller {
             'name_community'=>$this->post('name_community'),
             'contact_person'=>$this->post('contact_person'),
             'description'=>$this->post('description'),
-            'status'=>"Belum Dicek",
+            'status'=>"Di Terima",
             'legality'=>$this->post('legality'),
             'photo'=>$this->post('photo'),
         );
