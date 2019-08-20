@@ -13,7 +13,7 @@
                                 </li>
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-micon"><i class="ti-notepad"></i></span>
                                         <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Event</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
@@ -36,40 +36,29 @@
                                     </ul>
                                 </li>
                             </ul>
-                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Users</div>
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Pengguna &amp; Komunitas</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Daftar Pengguna</span>
+                                <li>
+                                    <a href="<?= base_url('Admin/personal_list'); ?>">
+                                        <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Pengguna</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <li>
-                                            <a href="<?= base_url('Admin/personal_list'); ?>">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Personal</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                            </li>
-                                            <li>    
-                                            <a href="<?= base_url('Admin/community_list'); ?>">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Komunitas</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                            </li>
-                                        </li>
-                                    </ul>       
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('Admin/community_list'); ?>">
+                                        <span class="pcoded-micon"><i class="ti-map-alt"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Komunitas</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
                                 </li>
                             </ul>
 
-                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Chart &amp; Maps</div>
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Lainnya</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-micon"><i class="ti-wallet"></i></span>
                                         <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Poin</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
@@ -93,7 +82,7 @@
                                 </li>
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
-                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-micon"><i class="ti-info-alt"></i></span>
                                         <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Informasi</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
