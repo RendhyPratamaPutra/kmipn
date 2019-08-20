@@ -41,9 +41,9 @@
                                                 <li class="breadcrumb-item">
                                                     <a href="index.html"> <i class="fa fa-home"></i> </a>
                                                 </li>
-                                               <li class="breadcrumb-item"><a href="#!">Basic Componenets</a>
+                                               <li class="breadcrumb-item"><a href="#!">Event</a>
                                                         </li>
-                                                        <li class="breadcrumb-item"><a href="#!">Basic Form Inputs</a>
+                                                        <li class="breadcrumb-item"><a href="#!">Tambah Event</a>
                                                         </li>
                                             </ul>
                                         </div>
@@ -67,32 +67,32 @@
 
                                                         </div>
                                                         <div class="card-block">
-                                                            <h4 class="sub-title">Basic Inputs</h4>
+                                                            <h4 class="sub-title">Form Event</h4>
                                                             <?php echo form_open_multipart('Admin/add_event');?>
                                                                 <div class="form-group row">
-                                                                    <label class="col-sm-2 col-form-label">Name Event</label>
+                                                                    <label class="col-sm-2 col-form-label">Nama Event</label>
                                                                     <div class="col-sm-10">
-                                                                        <input type="text" name="name_event" class="form-control">
+                                                                        <input type="text" name="name_event" class="form-control" placeholder="masukkan nama event">
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-sm-2 col-form-label">Description</label>
+                                                                    <label class="col-sm-2 col-form-label">Deskripsi</label>
                                                                     <div class="col-sm-10">
                                                                         <textarea rows="5" cols="5"  type="text" name="description" class="form-control"
-                                                                        placeholder="Type your title in Placeholder"></textarea>
+                                                                        placeholder="deskripsikan event anda"></textarea>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-sm-2 col-form-label">Address</label>
+                                                                    <label class="col-sm-2 col-form-label">Lokasi Event</label>
                                                                     <div class="col-sm-10">
                                                                         <input type="text" id="pac-input" name="address" class="form-control"
-                                                                        placeholder="Password input">
+                                                                        placeholder="masukkan lokasi">
                                                                         <input type="text" name="longlat" id="latlong" hidden="" >
                                                                         <div id="map"></div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-sm-2 col-form-label">Date and Time</label>
+                                                                    <label class="col-sm-2 col-form-label">Tanggal dan Waktu</label>
                                                                     <div class="col-sm-10 row">
                                                                         <div class="col-sm-5">
                                                                     <input type="date" name="date" class="form-control"> 
@@ -107,7 +107,9 @@
                                                                                 </div>
                                                                             </div>
                                                                             <div class="sub-title"></div>
-                                                                            <div class="form-group row"><button class="btn btn-success btn-round">Success Button</button></div>
+                                                                            <div class="form-group row justify-content-end">
+                                                                                <button class="btn btn-success btn-round">Buat Event</button>
+                                                                            </div>
                                                                             <?php echo form_close();?>
                                                                         
                                                                     </div>
