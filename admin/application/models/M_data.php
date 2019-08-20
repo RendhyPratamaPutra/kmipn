@@ -20,12 +20,11 @@ function cek_login($email,$password){
 }
 
 function get_all_personal(){
-
-    #Get all data users
-
         return  $this->db->get('personal');
-    
-
+}
+function get_all_community()
+{
+        return  $this->db->get('community');
 }
 
 }

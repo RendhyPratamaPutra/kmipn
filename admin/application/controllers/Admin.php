@@ -122,4 +122,10 @@ class Admin extends CI_Controller
 		$data['personal'] = $this->m_data->get_all_personal()->result();
 		$this->load->view('Admin/v_personal_list', $data);
 	}
+	public function community_list()
+	{
+		$data['title'] = "COMMUNITY LIST";
+		$data['community'] = $this->m_data->get_all_community()->result();
+		$this->load->view('Admin/v_community_list', $data);
+	}
 }

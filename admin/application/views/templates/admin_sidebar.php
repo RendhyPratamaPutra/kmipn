@@ -54,7 +54,7 @@
                                             </a>
                                             </li>
                                             <li>    
-                                            <a href="accordion.html">
+                                            <a href="<?= base_url('Admin/community_list'); ?>">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Komunitas</span>
                                                 <span class="pcoded-mcaret"></span>
