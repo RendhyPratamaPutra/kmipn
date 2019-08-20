@@ -19,7 +19,14 @@ function cek_login($email,$password){
     return $data;
 }
 
+function get_all_personal(){
 
+    #Get all data users
+
+        return  $this->db->get('personal');
+    
+
+}
 
 }
 ?>

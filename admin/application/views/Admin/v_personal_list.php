@@ -72,47 +72,41 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>USERNAME</th>
                                                             <th>NAME</th>
-                                                            <th>GENDER</th>
                                                             <th>ADDRESS</th>
                                                             <th>CONTAC PERSON</th>
                                                             <th>EMAIL</th>
-                                                            <th>PASSWORD</th>
                                                             <th>POINT</th>
-                                                            <th>CREATED</th>
-                                                            <th>Action</th>
+                                                            <th>ACTION</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <?php
                                                         $no=1;
-                                                        oreach ($users_data as $users)
-            {
-                ?>
-                <tr>
-			<td width="80px"><?php echo ++$start ?></td>
-			<td><?php echo $users->USERNAME ?></td>
-			<td><?php echo $users->NAME ?></td>
-			<td><?php echo $users->GENDER ?></td>
-			<td><?php echo $users->ADDRESS ?></td>
-			<td><?php echo $users->CONTAC_PERSON ?></td>
-			<td><?php echo $users->EMAIL ?></td>
-			<td><?php echo $users->PASSWORD ?></td>
-			<td><?php echo $users->POINT ?></td>
-			<td><?php echo $users->CREATED ?></td>
-			<td style="text-align:center" width="200px">
-				<?php 
-				echo anchor(site_url('users/read/'.$users->id_personal),'Read'); 
-				echo ' | '; 
-				echo anchor(site_url('users/update/'.$users->id_personal),'Update'); 
-				echo ' | '; 
-				echo anchor(site_url('users/delete/'.$users->id_personal),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
-				?>
-			</td>
-		</tr>
-                <?php
-            }
+                                                        foreach ($personal as $users)  
+                                                        {
+                                                        ?>
+                                                        <tr>
+                                                             <th><?= $no++?></th>
+                                                            <td><?php echo $users->name ?></td>
+                                                            <td><?php echo $users->address ?></td>
+                                                            <td><?php echo $users->contac_person ?></td>
+                                                            <td><?php echo $users->email ?></td>
+                                                            <td><?php echo $users->point ?></td>
+                                                 
+                                                            <td style="text-align:center" width="200px">
+                                                                <?php 
+                                                                echo anchor(site_url('users/read/'.$users->id_personal),'Read'); 
+                                                                echo ' | '; 
+                                                                echo anchor(site_url('users/update/'.$users->id_personal),'Update'); 
+                                                                echo ' | '; 
+                                                                echo anchor(site_url('users/delete/'.$users->id_personal),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+                                                                ?>
+                                                            </td>
+                                                    </tr>
+                                                        <?php
+                                                        
+                                                    }?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -137,5 +131,6 @@
         </div>
     </div>
 </div>
+
 
 <?php $this->load->view("templates/admin_footer") ?>
