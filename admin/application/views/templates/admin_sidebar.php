@@ -36,27 +36,61 @@
                                     </ul>
                                 </li>
                             </ul>
-                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Daftar Pengguna</div>
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Users</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="<?= base_url('personal/personal_list'); ?>">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Personal</span>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Daftar Pengguna</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <li>
+                                            <a href="<?= base_url('personal'); ?>">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Personal</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                            </li>
+                                            <li>    
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Komunitas</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                            </li>
+                                        </li>
+                                    </ul>       
                                 </li>
-                                <li>
-                                    <a href="bs-basic-table.html">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Komunitas</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-
                             </ul>
 
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Chart &amp; Maps</div>
                             <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Poin</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                        <li>
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Masukan Poin</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                            </li>
+                                            <li>    
+                                            <a href="accordion.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tukar Poin</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>        
+                                </li>
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
@@ -71,18 +105,7 @@
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
-                                        <li class=" ">
-                                            <a href="accordion.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Masukan Poin</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                            <a href="accordion.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tukar Poin</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
+                               
                                         <li class=" ">
                                             <a href="<?= base_url('Admin/tambah_event'); ?>">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -113,6 +136,7 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
+                                
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>

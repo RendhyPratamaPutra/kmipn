@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="30dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="110dp"
         android:background="@drawable/linear_shape">
         <TextView
@@ -103,7 +103,7 @@
                 ></Spinner>
 
             <View
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:id="@+id/v1"
                 android:layout_below="@+id/jk"
                 android:layout_width="match_parent"
@@ -172,14 +172,17 @@
                     android:padding="5dp"
                     android:textSize="10dp"
                     android:text="Pilih foto anda"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/pilih"
                     android:layout_toRightOf="@id/photo"/>
 
                 <Button
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/shape_bg"
                     android:id="@+id/pilih"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_alignParentRight="true"
                     android:text="Pilih" />
             </RelativeLayout>

@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -28,8 +30,23 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.RegisterActivity"
+            android:theme="@style/AppThemeKu" />
+        <activity
+            android:name=".activity.InformationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activity.CommunityActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activity.DetailCommuntiyActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:name=".activity.RegisterActivity"/>
+            android:name=".activity.CreateCommunityActivity"></activity>
+        <activity
+            android:name=".activity.PdfActivity"
+            android:theme="@style/AppThemeKu"/>
     </application>
 
 </manifest>
