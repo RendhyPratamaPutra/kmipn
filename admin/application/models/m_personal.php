@@ -6,7 +6,7 @@ class m_personal extends CI_Model
 
 	private $primary = "id_personal";
 
-	function get_all($personal){
+	function get_all_personal(){
 
 		#Get all data users
 	

@@ -13,7 +13,14 @@ function tambah_information($data,$table){
     $this->db->insert($table,$data);
 }
 
+function get_all_personal(){
 
+    #Get all data users
+
+        return  $this->db->get('personal');
+    
+
+}
 
 }
 ?>
