@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2019 at 01:09 PM
+-- Generation Time: Aug 21, 2019 at 01:32 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -112,7 +112,7 @@ CREATE TABLE `personal` (
   `id_personal` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `address` varchar(30) NOT NULL,
-  `contac person` int(14) NOT NULL,
+  `contac_person` int(14) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(8) NOT NULL,
   `point` int(11) NOT NULL,
@@ -123,7 +123,7 @@ CREATE TABLE `personal` (
 -- Dumping data for table `personal`
 --
 
-INSERT INTO `personal` (`id_personal`, `name`, `address`, `contac person`, `email`, `password`, `point`, `role_id`) VALUES
+INSERT INTO `personal` (`id_personal`, `name`, `address`, `contac_person`, `email`, `password`, `point`, `role_id`) VALUES
 (1, 'Admin', 'Jember', 815158685, 'ajip2606@gmail.com', '12345', 0, 1);
 
 -- --------------------------------------------------------
