@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2019 at 07:16 PM
+-- Generation Time: Aug 21, 2019 at 01:09 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -34,10 +34,18 @@ CREATE TABLE `community` (
   `name_community` varchar(30) NOT NULL,
   `contac_person` int(12) NOT NULL,
   `description` text NOT NULL,
-  `status` varchar(30) NOT NULL,
+  `privacy` varchar(30) NOT NULL,
   `legality` varchar(30) DEFAULT NULL,
-  `photo` blob NOT NULL
+  `photo` blob NOT NULL,
+  `status` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `community`
+--
+
+INSERT INTO `community` (`id_community`, `id_personal`, `name_community`, `contac_person`, `description`, `privacy`, `legality`, `photo`, `status`) VALUES
+(1, 1, 'beshihnesia', 0, '', 'invite only', NULL, '', 1);
 
 -- --------------------------------------------------------
 
@@ -164,6 +172,14 @@ CREATE TABLE `tb_event` (
   `status_event` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tb_event`
+--
+
+INSERT INTO `tb_event` (`id_event`, `id_community`, `name_event`, `photo`, `description`, `address`, `time_date`, `longlat`, `status_event`) VALUES
+(1, 1, 'Event 1', '', 'asdasdasd', 'asd', '', '', ''),
+(2, NULL, 'Event 2', '', '', 'qewqweqweqwe', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -265,7 +281,7 @@ ALTER TABLE `trans_event`
 -- AUTO_INCREMENT for table `community`
 --
 ALTER TABLE `community`
-  MODIFY `id_community` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_community` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `information`
@@ -295,7 +311,7 @@ ALTER TABLE `tb_announcement`
 -- AUTO_INCREMENT for table `tb_event`
 --
 ALTER TABLE `tb_event`
-  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `trans_event`
