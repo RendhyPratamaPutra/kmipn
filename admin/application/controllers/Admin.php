@@ -13,6 +13,7 @@ class Admin extends CI_Controller
 
 	public function index()
 	{
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['title'] = 'DASHBOARD - BERSIHNESIA';
 		$data['personal'] = $this->db->get('jumlah_personal')->result();
 		$data['community'] = $this->db->get('jumlah_community')->result();
@@ -21,6 +22,7 @@ class Admin extends CI_Controller
 	}
 	public function tambah_event()
 	{
+		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$this->load->view('Admin/v_tambah_event');
 	}
 	function add_event()
@@ -64,11 +66,13 @@ class Admin extends CI_Controller
 	}
 	public function list_event()
 	{
+		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['tb_event'] = $this->db->get('tb_event')->result();
 		$this->load->view('Admin/v_list_event', $data);
 	}
 	public function view_add_information()
 	{
+		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$this->load->view('Admin/v_add_information');
 	}
 	public function add_information()
@@ -111,6 +115,7 @@ class Admin extends CI_Controller
 	}
 	public function list_item()
 	{
+		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['item'] = $this->db->query("SELECT * FROM information WHERE category='Barang'")->result();
 		$this->load->view('Admin/v_list_information_item', $data);
 	}
@@ -118,12 +123,14 @@ class Admin extends CI_Controller
 
 	public function personal_list()
 	{
+		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['title'] = "PERSONAL LIST";
 		$data['personal'] = $this->m_data->get_all_personal()->result();
 		$this->load->view('Admin/v_personal_list', $data);
 	}
 	public function community_list()
 	{
+		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['title'] = "COMMUNITY LIST";
 		$data['community'] = $this->m_data->get_all_community()->result();
 		$this->load->view('Admin/v_community_list', $data);
