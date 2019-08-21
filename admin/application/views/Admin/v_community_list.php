@@ -6,13 +6,13 @@
 </head>
 
 <body>
-  <div class="fixed-button">
-  <a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
-    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
-  </a>
-  </div>
-  <!-- Pre-loader start -->
-  
+	<div class="fixed-button">
+	<a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
+		<i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
+	</a>
+	</div>
+	<!-- Pre-loader start -->
+
 	<div class="theme-loader">
 		<div class="loader-track">
 			<div class="loader-bar"></div>
@@ -39,13 +39,13 @@
 											<ul class="breadcrumb-title b-t-default p-t-10">
 												<li class="breadcrumb-item">
 													<a href="index.html"> <i class="fa fa-home"></i> </a>
-                        </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Basic Componenets</a>
 												</li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Bootstrap Basic Tables</a>
-                        </li>
+												<li class="breadcrumb-item">
+													<a href="#!">Basic Componenets</a>
+												</li>
+												<li class="breadcrumb-item">
+													<a href="#!">Bootstrap Basic Tables</>
+												</li>
 											</ul>
 										</div>
 									</div>
