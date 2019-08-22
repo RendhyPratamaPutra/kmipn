@@ -71,7 +71,7 @@
 										</div>
 										<div class="card-block table-border-style">
 											<div class="table-responsive">
-												<table class="table">
+												<table class="table" id="table_id" class="display">
 													<thead>
 														<tr>
 															<th>No</th>
@@ -93,7 +93,7 @@
 															<th><?= $no++?></th>
 															<td><?php echo $users->name_community ?></td>
 															<td><?php echo $users->description ?></td>
-															<td><?php echo $users->contac_person ?></td>
+															<td><?php echo $users->contact_person ?></td>
 															<td><?php echo $users->status ?></td>
 															<td><?php echo $users->legality ?></td>
 															<td style="text-align:center" width="200px">

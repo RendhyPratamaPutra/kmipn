@@ -12,7 +12,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a href="<?= base_url('Admin/request'); ?>">
 										<span class="pcoded-micon"><i class="ti-email"></i><b>FC</b></span>
 										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Request</span>
 										<span class="pcoded-mcaret"></span>

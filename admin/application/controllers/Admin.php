@@ -20,11 +20,13 @@ class Admin extends CI_Controller
 		$data['event'] = $this->db->get('jumlah_event')->result();
 		$this->load->view('Admin/dashbord', $data);
 	}
+
 	public function tambah_event()
 	{
-		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$this->load->view('Admin/v_tambah_event');
 	}
+
 	function add_event()
 	{
 		$nama_event = $this->input->post('name_event');
@@ -64,17 +66,20 @@ class Admin extends CI_Controller
                 </script>";
 		echo '<script>window.location="list_event";</script>';
 	}
+
 	public function list_event()
 	{
-		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['tb_event'] = $this->db->get('tb_event')->result();
 		$this->load->view('Admin/v_list_event', $data);
 	}
+
 	public function view_add_information()
 	{
-		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$this->load->view('Admin/v_add_information');
 	}
+	
 	public function add_information()
 	{
 		$category = $this->input->post('category');
@@ -113,26 +118,46 @@ class Admin extends CI_Controller
                 </script>";
 		echo '<script>window.location="list_item";</script>';
 	}
+
 	public function list_item()
 	{
-		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['item'] = $this->db->query("SELECT * FROM information WHERE category='Barang'")->result();
 		$this->load->view('Admin/v_list_information_item', $data);
 	}
 
-
 	public function personal_list()
 	{
-		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		// session login
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+
 		$data['title'] = "PERSONAL LIST";
+		// req data ke db
 		$data['personal'] = $this->m_data->get_all_personal()->result();
 		$this->load->view('Admin/v_personal_list', $data);
 	}
+
+	public function personal_search($keyword = null)
+	{
+		$data['personal'] = $this->m_data->get_personal_keyword($keyword)->result();
+		$this->load->view('Tables/tb_personal', $data);
+	}
+
 	public function community_list()
 	{
-		$data['personal'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['title'] = "COMMUNITY LIST";
-		$data['community'] = $this->m_data->get_all_community()->result();
+		// $data['community'] = $this->m_data->get_all_community()->result();
+		$data['community'] = $this->m_data->get_community()->result();
+
 		$this->load->view('Admin/v_community_list', $data);
+	}
+
+	public function request()
+	{
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['title'] = "COMMUNITY LIST";
+		$data['community'] = $this->m_data->get_req()->result();
+		$this->load->view('Admin/request_community', $data);
 	}
 }

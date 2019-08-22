@@ -65,9 +65,19 @@
 												</ul>
 											</div>
 
+											<form action="" class="mt-2">
+												<div class="form-group row justify-content-end">
+													<label class="col-sm-1 col-form-label" for="keyword">Cari</label>
+													<div class="col-sm-3">
+														<input class="form-control form-control-round" type="text" id="keyword">
+													</div>
+												</div>
+												
+											</form>
+
 										</div>
 										<div class="card-block table-border-style">
-											<div class="table-responsive">
+											<div class="table-responsive" id="id_tables">
 												<table class="table">
 													<thead>
 														<tr>
@@ -83,9 +93,7 @@
 													<tbody>
 														<?php
 														$no=1;
-														foreach ($personal as $users)  
-														{
-														?>
+														foreach ($personal as $users) : ?>
 														<tr>
 															<th><?= $no++?></th>
 															<td><?php echo $users->name ?></td>
@@ -102,12 +110,29 @@
 																echo anchor(site_url('users/delete/'.$users->id_personal),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 																?>
 															</td>
-													</tr>
-														<?php
-														
-													}?>
+														</tr>
+														<?php endforeach ?>
 													</tbody>
 												</table>
+												<hr>
+
+													<nav aria-label="Page navigation example" class="mt-4 d-flex justify-content-center">
+														<ul class="pagination">
+															<li class="page-item">
+																<a class="page-link" href="#" aria-label="Previous">
+																	<span aria-hidden="true">&laquo;</span>
+																</a>
+															</li>
+															<li class="page-item"><a class="page-link" href="#">1</a></li>
+															<li class="page-item"><a class="page-link" href="#">2</a></li>
+															<li class="page-item"><a class="page-link" href="#">3</a></li>
+															<li class="page-item">
+																<a class="page-link" href="#" aria-label="Next">
+																	<span aria-hidden="true">&raquo;</span>
+																</a>
+															</li>
+														</ul>
+													</nav>
 											</div>
 										</div>
 									</div>

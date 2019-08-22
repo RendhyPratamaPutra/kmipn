@@ -21,12 +21,16 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>vendor/assets/css/bootstrap/css/bootstrap.min.css">
     <!-- themify-icons line icon -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>vendor/assets/icon/themify-icons/themify-icons.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>vendor/assets/icon/font-awesome/css/font-awesome.min.css">
+	  <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>vendor/assets/icon/font-awesome/css/font-awesome.min.css">
     <!-- ico font -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>vendor/assets/icon/icofont/css/icofont.css">
+    
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>vendor/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(''); ?>vendor/assets/css/jquery.mCustomScrollbar.css">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css"  href="<?= base_url(''); ?>vendor/assets/DataTables/datatables.css">
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */

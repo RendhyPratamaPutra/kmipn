@@ -8,6 +8,8 @@
     <script type="text/javascript" src="<?php echo base_url(''); ?>vendor/assets/js/modernizr/modernizr.js"></script>
     <script type="text/javascript" src="<?php echo base_url(''); ?>vendor/assets/js/modernizr/css-scrollbars.js"></script>
     <script type="text/javascript" src="<?php echo base_url(''); ?>vendor/assets/js/common-pages.js"></script>
+
+    
 </body>
 
 </html>

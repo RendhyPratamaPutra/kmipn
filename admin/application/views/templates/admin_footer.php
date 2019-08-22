@@ -8,6 +8,9 @@
 <script type="text/javascript" src="<?php echo base_url(''); ?>vendor/assets/js/modernizr/modernizr.js"></script>
 <script type="text/javascript" src="<?php echo base_url(''); ?>vendor/assets/js/modernizr/css-scrollbars.js"></script>
 
+<!-- DataTables JS -->
+<script type="text/javascript" src="<?= base_url(''); ?>vendor/assets/DataTables/datatables.js"></script>
+
 <!-- Custom js -->
 <script type="text/javascript" src="<?php echo base_url(''); ?>vendor/assets/js/script.js"></script>
 <script src="<?php echo base_url(''); ?>vendor/assets/js/pcoded.min.js"></script>
@@ -90,9 +93,63 @@
   });
       }
 
+      // dataTables
+      $(document).ready( function () {
+        $('#myTable').DataTable();
+      } );
+
     </script>
          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkE6oJvsyX4sRAw0QTt3R_gJClY0NtIFQ&libraries=places&callback=initAutocomplete"
         async defer></script>
+
+    <!-- MyTables -->
+    <script>
+        // mengambil element
+        var tables = document.getElementById('id_tables');
+        var keyword = document.getElementById('keyword');
+        var page = document.getElementById('page');
+
+        // AJAX Filter
+        keyword.addEventListener('keyup', function () {
+
+            // buat object ajax
+            var xhr = new XMLHttpRequest();
+
+            // cek kesiapan ajax
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log('ok');
+                    tables.innerHTML = xhr.responseText;
+                }
+            }
+
+            // eksekusi ajax
+            // xhr.open('GET', 'ajax/tabel.php?keyword=' + keyword.value, true);
+            xhr.open('GET', '<?= base_url('Admin/personal_search/'); ?>' + keyword.value, true);
+            xhr.send();
+        });
+
+        function toPage() {
+
+            console.log(toPage.arguments);
+            // pages();
+            // buat object ajax
+            var xhr = new XMLHttpRequest();
+
+            // cek kesiapan ajax
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log('ok');
+                    tables.innerHTML = xhr.responseText;
+                }
+            }
+
+            // eksekusi ajax
+            xhr.open('GET', 'ajax/tabel.php?keyword=' + keyword.value + '&page=' + toPage.arguments[0], true);
+            xhr.send();
+
+        }
+    </script>
 </body>
 
 </html>
