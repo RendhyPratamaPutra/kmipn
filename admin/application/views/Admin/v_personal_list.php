@@ -63,18 +63,22 @@
 													<li><i class="fa fa-refresh reload-card"></i></li>
 													<li><i class="fa fa-times close-card"></i></li>
 												</ul>
-											</div>
-
+											</div>				
+											
 											<form action="" class="mt-2">
 												<div class="form-group row justify-content-end">
+													<div class="col-sm"></div>
 													<label class="col-sm-1 col-form-label" for="keyword">Cari</label>
 													<div class="col-sm-3">
 														<input class="form-control form-control-round" type="text" id="keyword">
+														<P>
+														<div class="col-sm-2 text-right">
+															<?php echo anchor(site_url('personal/create'), '+ Tambah Personal', 'class="btn btn-primary"'); ?>
+														</div>
+														</P>
 													</div>
-												</div>
-												
+												</div>			
 											</form>
-
 										</div>
 										<div class="card-block table-border-style">
 											<div class="table-responsive" id="id_tables">

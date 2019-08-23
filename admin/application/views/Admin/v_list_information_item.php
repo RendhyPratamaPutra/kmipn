@@ -71,6 +71,11 @@
 											</div>
 
 										</div>
+										<form action="" class="mt-2">
+											<div class="col-sm-2 text-left">
+												<?php echo anchor(site_url('barang/create'), '+ Tambah Barang', 'class="btn btn-primary"'); ?>
+											</div>
+										</form>	
 										<div class="card-block table-border-style">
 											<div class="table-responsive">
 												<table class="table">
