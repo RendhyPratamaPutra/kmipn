@@ -19,19 +19,24 @@ function cek_login($email,$password){
     return $data;
 }
 
-function get_all_personal(){
-        return  $this->db->get('personal');
+
+function get_all_personal()
+{
+    return $this->db->get('personal');
+}
+
+function pagination_personal($dataStart, $perpage){
+        // return  $this->db->get('personal');
+    $this->db->select('*');
+    $this->db->from('personal');
+    $this->db->limit($perpage, $dataStart);
+    // $this->db->limit(2, 1);
+
+
+    return $this->db->get();
 }
 
 function get_personal_keyword($keyword){
-    // $cond = array('id_personal' => $keyword, 'name' => $keyword, 'address' => $keyword, 'contac_person' => $keyword, 'address' => $email);
-    // $dataP = $query = "SELECT * FROM personal
-    // WHERE 
-    // id_personal LIKE '%$keyword%' OR
-    // name LIKE '%$keyword%' OR
-    // address LIKE '%$keyword%' OR
-    // contac_person LIKE '%$keyword%' OR
-    // email LIKE '%$keyword%'";
 
     $this->db->select('*');
     $this->db->from('personal');
@@ -40,25 +45,24 @@ function get_personal_keyword($keyword){
     $this->db->or_like('address', $keyword, 'both');
     $this->db->or_like('contac_person', $keyword, 'both');
     $this->db->or_like('email', $keyword, 'both');
+    // $this->db->limit($perpage, $dataStart);
+    // $this->db->limit(2, 0);
 
+    return $this->db->get();
+}
 
-    // $countData  = $this->db->query($dataP);
-    // $totData = $this->db->count_all_results($dataP);
-
-    // // $totData = mysqli_num_rows($countData);
-    // $maxData = 1;
-    // $pages = ceil($totData / $maxData);
-    // $activePage = ( isset($_GET['page']) ) ? $_GET['page'] : 1;
-    // $dataStart = ( $maxData * $activePage ) - $maxData;
-
-    // $query = "SELECT * FROM personal
-    // WHERE 
-    // id_personal LIKE '%$keyword%' OR
-    // name LIKE '%$keyword%' OR
-    // address LIKE '%$keyword%' OR
-    // contac_person LIKE '%$keyword%' OR
-    // email LIKE '%$keyword%'
-    // LIMIT $dataStart, $maxData";
+function pagination_personal_keyword($keyword, $dataStart, $perpage){
+    
+    $this->db->select('*');
+    $this->db->from('personal');
+    $this->db->or_like('id_personal', $keyword, 'both');
+    $this->db->or_like('name', $keyword, 'both');
+    $this->db->or_like('address', $keyword, 'both');
+    $this->db->or_like('contac_person', $keyword, 'both');
+    $this->db->or_like('email', $keyword, 'both');
+    $this->db->limit($perpage, $dataStart);
+    // $this->db->limit($dataStart, $perpage);
+    // $this->db->limit(2, 0);
 
     return $this->db->get();
 }
