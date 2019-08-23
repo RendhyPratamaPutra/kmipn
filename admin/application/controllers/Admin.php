@@ -126,20 +126,56 @@ class Admin extends CI_Controller
 		$this->load->view('Admin/v_list_information_item', $data);
 	}
 
-	public function personal_list()
+	public function personal_list($activePage = 1)
 	{
 		// session login
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
-
 		$data['title'] = "PERSONAL LIST";
 		// req data ke db
-		$data['personal'] = $this->m_data->get_all_personal()->result();
+		
+		// pagination
+		$perpage = 2;
+		$startData = ($perpage * $activePage) - $perpage;
+		$data['total_rows'] = $this->m_data->get_all_personal()->num_rows();
+		$data['pages'] = ceil($data['total_rows'] / $perpage);
+		$data['active'] = $activePage;
+		$data['personal'] = $this->m_data->pagination_personal($startData, $perpage)->result();
+
+		// $config['base_url'] = site_url();
+		// $config['total_rows'] = $this->m_data->get_all_personal()->num_rows();
+		// $config['per_page'] = $perpage;
+
 		$this->load->view('Admin/v_personal_list', $data);
 	}
 
 	public function personal_search($keyword = null)
 	{
-		$data['personal'] = $this->m_data->get_personal_keyword($keyword)->result();
+		
+		$activePage = 1;
+		$perpage = 2;
+		$data['total_rows'] = $this->m_data->get_personal_keyword($keyword)->num_rows();
+		$data['pages'] = ceil($data['total_rows'] / $perpage);
+		$data['active'] = $activePage;
+
+		$startData = ($perpage * $activePage) - $perpage;
+		
+		$data['personal'] = $this->m_data->pagination_personal_keyword($keyword, $startData, $perpage)->result();
+		$this->load->view('Tables/tb_personal', $data);
+	}
+
+	public function personal_pagination($activePage = null, $keyword = null)
+	{
+		if(is_null($activePage)){
+			$activePage = 1;
+		}
+		$perpage = 2;
+		$data['total_rows'] = $this->m_data->get_personal_keyword($keyword)->num_rows();
+		$data['pages'] = ceil($data['total_rows'] / $perpage);
+		$data['active'] = $activePage;
+
+		$startData = ($perpage * $activePage) - $perpage;
+		
+		$data['personal'] = $this->m_data->pagination_personal_keyword($keyword, $startData, $perpage)->result();
 		$this->load->view('Tables/tb_personal', $data);
 	}
 

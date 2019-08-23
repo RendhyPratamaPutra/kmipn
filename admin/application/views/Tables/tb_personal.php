@@ -35,22 +35,25 @@
 	</tbody>
 </table>
 
-<!-- <nav aria-label="Page navigation example">
+<hr>
+
+<!-- Pagination -->
+<nav aria-label="Page navigation example" class="mt-4 d-flex justify-content-center">
   <ul class="pagination">
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-
-    <?php for( $i = 1; $i <= $totData; $i++) : ?>
-      <li class="page-item"><a class="page-link" onClick="toPage(<?= $i; ?>)" ><?= $i; ?></a></li>
+    <?php  ?>
+    <?php for( $i = 1; $i <= $pages; $i++) : ?>
+      <li class="page-item <?php if($i == $active) { echo 'active'; } ?>" ><a class="page-link" onClick="toPage(<?= $i; ?>)" ><?= $i; ?></a></li>
     <?php endfor ?>
-
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
     </li>
   </ul>
-</nav> -->
+</nav>
+<!-- end Pagination -->

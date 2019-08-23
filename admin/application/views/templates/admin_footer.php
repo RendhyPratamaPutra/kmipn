@@ -145,7 +145,8 @@
             }
 
             // eksekusi ajax
-            xhr.open('GET', 'ajax/tabel.php?keyword=' + keyword.value + '&page=' + toPage.arguments[0], true);
+            xhr.open('GET', '<?= base_url('Admin/personal_pagination/'); ?>' + keyword.value + '/' + toPage.arguments[0], true);
+            // xhr.open('GET', 'ajax/tabel.php?keyword=' + keyword.value + '&page=' + toPage.arguments[0], true);
             xhr.send();
 
         }
