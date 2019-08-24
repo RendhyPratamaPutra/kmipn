@@ -163,7 +163,7 @@ class Admin extends CI_Controller
 		$this->load->view('Tables/tb_personal', $data);
 	}
 
-	public function personal_pagination($activePage = null, $keyword = null)
+	public function personal_pagination($keyword = null, $activePage = null)
 	{
 		if(is_null($activePage)){
 			$activePage = 1;
