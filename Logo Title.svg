@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 263.101 56.063">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-5 {
+        fill: #424242;
+        font-size: 42px;
+        font-family: LucidaBright-Demi, Lucida Bright;
+        font-weight: 300;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.321" y1="0.503" x2="1.499" y2="0.479" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#83e1eb"/>
+      <stop offset="1" stop-color="#2688b9"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-0.226" y1="1.215" x2="0.538" y2="0.268" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.184" y1="0.843" x2="0.722" y2="0.299" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="0.457" y1="0.495" x2="0.911" y2="0.48" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#c1c1c1"/>
+      <stop offset="1" stop-color="#9e9e9e"/>
+    </linearGradient>
+  </defs>
+  <g id="Logo_Title" data-name="Logo Title" transform="translate(0.196 0.081)">
+    <path id="Path_37" data-name="Path 37" d="M0,75.9" transform="translate(-0.125 -48.563)"/>
+    <path id="Path_38" data-name="Path 38" d="M2.2,103.4" transform="translate(-1.531 -66.14)"/>
+    <g id="Group_14" data-name="Group 14" transform="translate(-0.196 -0.081)">
+      <path id="Path_39" data-name="Path 39" class="cls-1" d="M39.749,72.242C35.6,74.515,33,74.443,30.4,73.469c2.273,2.959,2.706,6.243,2.923,9.31.217,3.212-1.191,8.227-8.516,8.588s-7.47-4.619-7.47-4.619V73.072s5.377-1.624,9.31-1.335a29.216,29.216,0,0,0-6.171-2.309c-5.3-1.335-9.238-.289-12.016,1.443V88.408c0,4.8-2.706,4.33-4.547,4.475-1.876.144-.217,1.191-.217,1.191s17.573-.072,23.311,0,15.156-4.33,15.228-14.29A13.1,13.1,0,0,0,39.749,72.242Z" transform="translate(-1.861 -43.958)"/>
+      <path id="Path_40" data-name="Path 40" class="cls-2" d="M.4,81.063c0,.108,6.315-11.547,24.466-12.088C24.865,68.974.255,53.133.4,81.063Z" transform="translate(-0.184 -41.196)"/>
+      <path id="Path_41" data-name="Path 41" class="cls-3" d="M39.463,61.236A31.511,31.511,0,0,0,35.2,57.123a26.1,26.1,0,0,0-13.929-5.3c-7.542-.505-15.408,3.175-17.5,8.66s-1.443,5.593-1.443,5.593S7.239,55.282,19.977,58.53C28.926,60.839,30.875,66.072,39.463,61.236Z" transform="translate(-1.358 -33.061)"/>
+      <path id="Path_42" data-name="Path 42" class="cls-4" d="M6.37,4.386v15.7a19.056,19.056,0,0,1,8.877-3.248V4.819c0-1.949,1.263-1.732,1.263-1.732h3.284c9.057,1.66,8.083,10.97,6.567,15.084,0,.036-.036.036-.036.072a41.62,41.62,0,0,1,3.9,1.552,12.318,12.318,0,0,0,4.8-11.547c-.974-9.274-15.408-8.3-15.408-8.3H.7c-1.732,0-.433,1.263-.433,1.263C6.154,1.031,6.37,4.386,6.37,4.386Z" transform="translate(0.196 0.081)"/>
+    </g>
+    <text id="ersihnesia" class="cls-5" transform="translate(45.905 46.981)"><tspan x="0" y="0">ersihnesia</tspan></text>
+  </g>
+</svg>
