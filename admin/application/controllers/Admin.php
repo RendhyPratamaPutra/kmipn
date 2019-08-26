@@ -121,6 +121,7 @@ class Admin extends CI_Controller
 
 	public function list_item()
 	{
+		$data['title'] = "TRASH LIST";
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['item'] = $this->db->query("SELECT * FROM information WHERE category='Barang'")->result();
 		$this->load->view('Admin/v_list_information_item', $data);
