@@ -6,7 +6,7 @@ require APPPATH . '/libraries/REST_Controller.php';
 
 use Restserver\Libraries\REST_Controller;
 
-class Informasi_barang extends REST_Controller
+class Informasi_sampahnon extends REST_Controller
 {
 
     function __construct($config = 'rest')
@@ -19,8 +19,7 @@ class Informasi_barang extends REST_Controller
 
     function index_get()
     {
-        $event = $this->db->get_where('information', array('Category' => 'Barang'))->result();
+        $event = $this->db->get_where('information', array('Category' => 'nonorganik'))->result();
         $this->response(array("result" => $event, 200));
     }
-
 }
