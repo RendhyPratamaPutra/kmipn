@@ -24,7 +24,7 @@ class Admin extends CI_Controller
 	public function tambah_event()
 	{
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
-		$this->load->view('Admin/v_tambah_event');
+		$this->load->view('Admin/v_tambah_event', $data);
 	}
 
 	function add_event()
