@@ -106,14 +106,7 @@
 										<li>    
 											<a href="accordion.html">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tambah Barang tukar</span>
-												<span class="pcoded-mcaret"></span>
-											</a>
-										</li>
-										<li>    
-											<a href="accordion.html">
-												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">List Barang</span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Merchandise</span>
 												<span class="pcoded-mcaret"></span>
 											</a>
 										</li>
@@ -129,7 +122,7 @@
 										<li class=" ">
 										<a href="<?= base_url('Admin/list_item'); ?>">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Daftar Barang</span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Daftar Barang Daur Ulang</span>
 												<span class="pcoded-mcaret"></span>
 											</a>
 										</li>

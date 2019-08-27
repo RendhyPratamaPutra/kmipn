@@ -67,7 +67,13 @@ class Admin extends CI_Controller
                 </script>";
 		echo '<script>window.location="list_event";</script>';
 	}
-
+	public function list_merchandise()
+	{
+		$data['title'] = 'MERCHANDISE - BERSIHNESIA';	
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['item_reedem'] = $this->db->get('item_reedem')->result();
+		$this->load->view('Admin/v_list_merchandise', $data);
+	}	
 	public function list_event()
 	{
 		$data['title'] = 'EVENT LIST - BERSIHNESIA';	
