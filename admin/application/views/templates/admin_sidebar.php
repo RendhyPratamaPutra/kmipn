@@ -19,14 +19,14 @@
 									</a>
 									<ul class="pcoded-submenu">
 										<li class=" ">
-											<a href="<?= base_url('Admin/request'); ?>">
+											<a href="#">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Voucher</span>
 												<span class="pcoded-mcaret"></span>
 											</a>
 										</li>
 										<li class=" ">
-											<a href="<?= base_url('Admin/tambah_event'); ?>">
+											<a href="#">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Tukar Barang</span>
 												<span class="pcoded-mcaret"></span>
