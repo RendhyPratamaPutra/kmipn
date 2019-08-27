@@ -23,6 +23,7 @@ class Admin extends CI_Controller
 
 	public function tambah_event()
 	{
+		$data['title'] = 'ADD EVENT - BERSIHNESIA';	
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$this->load->view('Admin/v_tambah_event', $data);
 	}
@@ -69,6 +70,7 @@ class Admin extends CI_Controller
 
 	public function list_event()
 	{
+		$data['title'] = 'EVENT LIST - BERSIHNESIA';	
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['tb_event'] = $this->db->get('tb_event')->result();
 		$this->load->view('Admin/v_list_event', $data);
@@ -77,7 +79,7 @@ class Admin extends CI_Controller
 	public function view_add_information()
 	{
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
-		$this->load->view('Admin/v_add_information');
+		$this->load->view('Admin/v_add_information', $data);
 	}
 	
 	public function add_information()
