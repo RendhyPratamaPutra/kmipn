@@ -11,12 +11,29 @@
 										<span class="pcoded-mcaret"></span>
 									</a>
 								</li>
-								<li>
-									<a href="<?= base_url('Admin/request'); ?>">
+								<li class="pcoded-hasmenu">
+								<a href="javascript:void(0)">
 										<span class="pcoded-micon"><i class="ti-email"></i><b>FC</b></span>
 										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Request</span>
 										<span class="pcoded-mcaret"></span>
 									</a>
+									<ul class="pcoded-submenu">
+										<li class=" ">
+											<a href="<?= base_url('Admin/request'); ?>">
+												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Voucher</span>
+												<span class="pcoded-mcaret"></span>
+											</a>
+										</li>
+										<li class=" ">
+											<a href="<?= base_url('Admin/tambah_event'); ?>">
+												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Tukar Barang</span>
+												<span class="pcoded-mcaret"></span>
+											</a>
+										</li>
+
+									</ul>
 								</li>
 								<li class="pcoded-hasmenu">
 									<a href="javascript:void(0)">
@@ -42,6 +59,7 @@
 
 									</ul>
 								</li>
+								
 							</ul>
 							<div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Pengguna &amp; Komunitas</div>
 							<ul class="pcoded-item pcoded-left-item">
@@ -73,7 +91,7 @@
 										<li>
 											<a href="accordion.html">
 												<span class="pcoded-micon"><i class="ti-"></i></span>
-												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Masukan Voucher</span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tambah Voucher</span>
 												<span class="pcoded-mcaret"></span>
 											</a>
 											</li>
@@ -81,7 +99,7 @@
 											<li>    
 											<a href="accordion.html">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tukar Voucher</span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Stok Voucher</span>
 												<span class="pcoded-mcaret"></span>
 											</a>
 										</li>
@@ -95,7 +113,7 @@
 										<li>    
 											<a href="accordion.html">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tukar Barang</span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">List Barang</span>
 												<span class="pcoded-mcaret"></span>
 											</a>
 										</li>
