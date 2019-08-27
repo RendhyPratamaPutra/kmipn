@@ -73,7 +73,7 @@
 										<li>
 											<a href="accordion.html">
 												<span class="pcoded-micon"><i class="ti-"></i></span>
-												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Masukan Poin</span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Masukan Voucher</span>
 												<span class="pcoded-mcaret"></span>
 											</a>
 											</li>
@@ -81,7 +81,21 @@
 											<li>    
 											<a href="accordion.html">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tukar Poin</span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tukar Voucher</span>
+												<span class="pcoded-mcaret"></span>
+											</a>
+										</li>
+										<li>    
+											<a href="accordion.html">
+												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tambah Barang tukar</span>
+												<span class="pcoded-mcaret"></span>
+											</a>
+										</li>
+										<li>    
+											<a href="accordion.html">
+												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tukar Barang</span>
 												<span class="pcoded-mcaret"></span>
 											</a>
 										</li>
