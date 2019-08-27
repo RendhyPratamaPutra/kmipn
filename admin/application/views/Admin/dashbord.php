@@ -78,7 +78,7 @@
                           <?php foreach($personal as $a) { ?>
                             <div class="card-block">
                               <h6 class="m-b-20">Jumlah Anggota</h6>
-                              <h2 class="text-right"><i class="ti-user f-left"></i><span><?= $a->jumlah_personal ?></span></h2>
+                              <h2 class="text-right"><i class="ti-user f-left"></i><span><?= $a->jumlah ?></span></h2>
                               <!-- <p class="m-b-0">Completed Orders<span class="f-right">351</span></p> -->
                             </div>
                           <?php } ?>
@@ -90,7 +90,7 @@
                         <?php foreach($community as $a) { ?>
                           <div class="card-block">
                             <h6 class="m-b-20">Jumlah Komunitas</h6>
-                            <h2 class="text-right"><i class="ti-comments f-left"></i><span><?= $a->jumlah_community ?></span></h2>
+                            <h2 class="text-right"><i class="ti-comments f-left"></i><span><?= $a->jumlah?></span></h2>
                             <!-- <p class="m-b-0">This Month<span class="f-right">213</span></p> -->
                           </div>
                         <?php } ?>
@@ -102,7 +102,7 @@
                         <?php foreach($event as $a) { ?>
                           <div class="card-block">
                             <h6 class="m-b-20">Total Event</h6>
-                            <h2 class="text-right"><i class="ti-notepad f-left"></i><span><?= $a->jumlah_event ?></span></h2>
+                            <h2 class="text-right"><i class="ti-notepad f-left"></i><span><?= $a->jumlah ?></span></h2>
                             <!-- <p class="m-b-0">This Month<span class="f-right">$5,032</span></p> -->
                           </div>
                           <?php } ?>
@@ -185,7 +185,7 @@
 															<th>Name Event</th>
 															<th>Address</th>
 															<th>Description</th>
-															<th>Time&Date</th>
+												
 															<th>Photo</th>
 															<th>Status Event</th>
 				
@@ -202,7 +202,7 @@
 															<td><?= $e->name_event?></td>
 															<td><?= $e->address?></td>
 															<td><?= $e->description?></td>
-															<td><?= $e->time_date?></td>
+													
 															<td><img src="<?php echo base_url('./upload/'.$e->photo) ?>"  width="100" /></td>
 															<td><?= $e->status_event?></td>
 								

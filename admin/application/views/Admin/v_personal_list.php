@@ -102,7 +102,7 @@
 															<th><?= $no++?></th>
 															<td><?php echo $users->name ?></td>
 															<td><?php echo $users->address ?></td>
-															<td><?php echo $users->contac_person ?></td>
+															<td><?php echo $users->contact_person ?></td>
 															<td><?php echo $users->email ?></td>
 															<td><?php echo $users->point ?></td>
 															<td style="text-align:center" width="200px">

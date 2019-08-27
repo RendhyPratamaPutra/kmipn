@@ -15,6 +15,7 @@ class Admin extends CI_Controller
 	{
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['title'] = 'DASHBOARD - BERSIHNESIA';
+		$data['dataevent'] = $this->db->get('tb_event')->result();
 		$data['personal'] = $this->db->get('jumlah_personal')->result();
 		$data['community'] = $this->db->get('jumlah_community')->result();
 		$data['event'] = $this->db->get('jumlah_event')->result();
