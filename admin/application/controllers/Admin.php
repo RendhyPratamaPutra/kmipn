@@ -155,6 +155,7 @@ class Admin extends CI_Controller
 		// $config['total_rows'] = $this->m_data->get_all_personal()->num_rows();
 		// $config['per_page'] = $perpage;
 
+		
 		$this->load->view('Admin/v_personal_list', $data);
 	}
 
