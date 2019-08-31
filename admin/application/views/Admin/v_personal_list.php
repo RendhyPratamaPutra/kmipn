@@ -88,7 +88,7 @@
 															<th>No</th>
 															<th>NAME</th>
 															<th>ADDRESS</th>
-															<th>CONTAC PERSON</th>
+															<th>CONTACT PERSON</th>
 															<th>EMAIL</th>
 															<th>POINT</th>
 															<th>ACTION</th>

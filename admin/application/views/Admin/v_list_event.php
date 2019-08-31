@@ -95,7 +95,7 @@
 															<td><?= $e->name_event?></td>
 															<td><?= $e->address?></td>
 															<td><?= $e->description?></td>
-															<td><?= $e->time_date?></td>
+															<td><?= $e->date_time?></td>
 															<td><img src="<?php echo base_url('./upload/'.$e->photo) ?>"  width="100" /></td>
 															<td><?= $e->status_event?></td>
 															<td><button class="btn btn-danger btn-round">Hapus</button></td>
