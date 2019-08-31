@@ -76,8 +76,8 @@
 														<tr>
 															<th>No</th>
 															<th>NAME</th>
-															<th>ADDRESS</th>
-															<th>CONTAC PERSON</th>
+															<!-- <th>ADDRESS</th> -->
+															<th>CONTACT PERSON</th>
 															<th>EMAIL</th>
 															<th>POINT</th>
 															<th>ACTION</th>
@@ -92,8 +92,8 @@
 														<tr>
 															<th><?= $no++?></th>
 															<td><?php echo $users->name_community ?></td>
-															<td><?php echo $users->description ?></td>
-															<td><?php echo $users->contac_person ?></td>
+															<!-- <td><?php echo $users->description ?></td> -->
+															<td><?php echo $users->contact_person ?></td>
 															<td><?php echo $users->status ?></td>
 															<td><?php echo $users->legality ?></td>
 															<td style="text-align:center" width="200px">
