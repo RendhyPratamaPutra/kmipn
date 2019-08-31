@@ -39,13 +39,13 @@
 											<ul class="breadcrumb-title b-t-default p-t-10">
 												<li class="breadcrumb-item">
 													<a href="index.html"> <i class="fa fa-home"></i> </a>
-                        </li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Basic Componenets</a>
 												</li>
-                        <li class="breadcrumb-item">
-                          <a href="#!">Bootstrap Basic Tables</a>
-                        </li>
+												<li class="breadcrumb-item">
+													<a href="#!">Basic Componenets</a>
+												</li>
+												<li class="breadcrumb-item">
+													<a href="#!">Bootstrap Basic Tables</a>
+												</li>
 											</ul>
 										</div>
 									</div>

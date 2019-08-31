@@ -43,7 +43,7 @@ function get_personal_keyword($keyword){
     $this->db->or_like('id_personal', $keyword, 'both');
     $this->db->or_like('name', $keyword, 'both');
     $this->db->or_like('address', $keyword, 'both');
-    $this->db->or_like('contac_person', $keyword, 'both');
+    $this->db->or_like('contact_person', $keyword, 'both');
     $this->db->or_like('email', $keyword, 'both');
     // $this->db->limit($perpage, $dataStart);
     // $this->db->limit(2, 0);
@@ -58,7 +58,7 @@ function pagination_personal_keyword($keyword, $dataStart, $perpage){
     $this->db->or_like('id_personal', $keyword, 'both');
     $this->db->or_like('name', $keyword, 'both');
     $this->db->or_like('address', $keyword, 'both');
-    $this->db->or_like('contac_person', $keyword, 'both');
+    $this->db->or_like('contact_person', $keyword, 'both');
     $this->db->or_like('email', $keyword, 'both');
     $this->db->limit($perpage, $dataStart);
     // $this->db->limit($dataStart, $perpage);

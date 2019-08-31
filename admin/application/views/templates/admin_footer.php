@@ -139,13 +139,17 @@
             // cek kesiapan ajax
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
-                    console.log('ok');
+                    console.log('oke');
                     tables.innerHTML = xhr.responseText;
                 }
             }
 
             // eksekusi ajax
-            xhr.open('GET', '<?= base_url('Admin/personal_pagination/'); ?>' + keyword.value + '/' + toPage.arguments[0], true);
+            if(keyword.value == ""){
+              xhr.open('GET', '<?= base_url('Admin/personal_pagination/'); ?>' + toPage.arguments[0], true);
+            } else {
+              xhr.open('GET', '<?= base_url('Admin/personal_pagination_keyword/'); ?>' + keyword.value + '/' + toPage.arguments[0], true);
+            }
             // xhr.open('GET', 'ajax/tabel.php?keyword=' + keyword.value + '&page=' + toPage.arguments[0], true);
             xhr.send();
 
