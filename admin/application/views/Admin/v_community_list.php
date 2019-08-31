@@ -68,10 +68,19 @@
 												</ul>
 											</div>
 
+											<form action="" class="mt-2">
+												<div class="form-group row justify-content-end">
+													<div class="col-sm"></div>
+													<label class="col-sm-1 col-form-label" for="keyCommunity">Cari</label>
+													<div class="col-sm-3">
+														<input class="form-control form-control-round" type="text" id="keyCommunity">
+													</div>
+												</div>			
+											</form>
 										</div>
 										<div class="card-block table-border-style">
-											<div class="table-responsive">
-												<table class="table" id="table_id" class="display">
+											<div class="table-responsive" id="tbCommunity">
+												<table class="table" class="display">
 													<thead>
 														<tr>
 															<th>No</th>
@@ -111,6 +120,26 @@
 													}?>
 													</tbody>
 												</table>
+												<hr>
+
+												<nav aria-label="Page navigation example" class="mt-4 d-flex justify-content-center">
+													<ul class="pagination">
+														<li class="page-item">
+															<a class="page-link" href="#" aria-label="Previous">
+																<span aria-hidden="true">&laquo;</span>
+															</a>
+														</li>
+														<?php  ?>
+														<?php for( $i = 1; $i <= $pages; $i++) : ?>
+															<li class="page-item <?php if($i == $active) { echo 'active'; } ?>"><a class="page-link" onClick="toPageCommunity(<?= $i; ?>)" ><?= $i; ?></a></li>
+														<?php endfor ?>
+														<li class="page-item">
+															<a class="page-link" href="#" aria-label="Next">
+																<span aria-hidden="true">&raquo;</span>
+															</a>
+														</li>
+													</ul>
+												</nav>
 											</div>
 										</div>
 									</div>

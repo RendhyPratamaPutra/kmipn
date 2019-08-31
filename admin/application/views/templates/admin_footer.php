@@ -107,10 +107,13 @@
         // mengambil element
         var tables = document.getElementById('id_tables');
         var keyword = document.getElementById('keyword');
-        // var page = document.getElementById('page');
 
         var tbEvent = document.getElementById('tbEvent');
         var keyEvent = document.getElementById('keyEvent');
+        
+        var tbCommunity = document.getElementById('tbCommunity');
+        var keyCommunity = document.getElementById('keyCommunity');
+
 
         // AJAX Filter
         if(keyword){
@@ -162,7 +165,7 @@
         }
 
         
-        // var pg_event = ;
+        // Event
         if(keyEvent){
           
           keyEvent.addEventListener('keyup', function () {
@@ -210,6 +213,58 @@
             xhr.send();
 
         }
+        // end Event
+
+
+        // Community
+        if(keyCommunity){
+          
+          keyCommunity.addEventListener('keyup', function () {
+            
+            // buat object ajax
+            var xhr = new XMLHttpRequest();
+            
+            // cek kesiapan ajax
+            xhr.onreadystatechange = function () {
+              if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log('ok');
+                tbCommunity.innerHTML = xhr.responseText;
+              }
+            }
+            
+            // eksekusi ajax
+            xhr.open('GET', '<?= base_url('Admin/community_search/'); ?>' + keyCommunity.value, true);
+            xhr.send();
+          });
+
+        }
+
+        function toPageCommunity() {
+
+            console.log(toPageCommunity.arguments);
+            // pages();
+            // buat object ajax
+            var xhr = new XMLHttpRequest();
+
+            // cek kesiapan ajax
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log('oke');
+                    tbCommunity.innerHTML = xhr.responseText;
+                }
+            }
+
+            // eksekusi ajax
+            if(keyCommunity.value == ""){
+              xhr.open('GET', '<?= base_url('Admin/community_pagination/'); ?>' + toPageCommunity.arguments[0], true);
+            } else {
+              xhr.open('GET', '<?= base_url('Admin/community_pagination_keyword/'); ?>' + keyCommunity.value + '/' + toPageCommunity.arguments[0], true);
+            }
+            // xhr.open('GET', 'ajax/tabel.php?keyword=' + keyword.value + '&page=' + toPage.arguments[0], true);
+            xhr.send();
+
+        }
+        // end Community
     </script>
 </body>
 

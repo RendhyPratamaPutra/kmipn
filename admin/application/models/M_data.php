@@ -118,7 +118,53 @@ function pagination_event_keyword($keyword, $dataStart, $perpage){
 }
 // end Event
 
+
+// Community
 function get_all_community()
+{
+    return $this->db->get('community');
+}
+
+function pagination_community($dataStart, $perpage){
+        // return  $this->db->get('personal');
+    $this->db->select('*');
+    $this->db->from('community');
+    $this->db->limit($perpage, $dataStart);
+    // $this->db->limit(2, 1);
+
+
+    return $this->db->get();
+}
+
+function get_community_keyword($keyword){
+
+    // not finished yet
+    $this->db->select('*');
+    $this->db->from('community');
+    $this->db->or_like('id_community', $keyword, 'both');
+    $this->db->or_like('name_community', $keyword, 'both');
+    // $this->db->or_like('contact_person', $keyword, 'both');
+    // $this->db->or_like('address', $keyword, 'both');
+    // $this->db->or_like('status_event', $keyword, 'both');
+
+    return $this->db->get();
+}
+
+function pagination_community_keyword($keyword, $dataStart, $perpage){
+    
+    // not finisfhed yet
+    $this->db->select('*');
+    $this->db->from('community');
+    $this->db->or_like('id_community', $keyword, 'both');
+    $this->db->or_like('name_community', $keyword, 'both');
+    $this->db->limit($perpage, $dataStart);
+
+    return $this->db->get();
+}
+// end Community
+
+
+function get_all_community_()
 {
         return  $this->db->get('community');
 }

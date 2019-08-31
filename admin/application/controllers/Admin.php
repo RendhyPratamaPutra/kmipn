@@ -269,7 +269,71 @@ class Admin extends CI_Controller
 	// end Event
 
 
-	public function community_list()
+	// Community
+	public function community_list($activePage = 1)
+	{
+		// session login
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['title'] = "PERSONAL LIST";
+		// pagination
+		$perpage = 2;
+		$startData = ($perpage * $activePage) - $perpage;
+		$data['total_rows'] = $this->m_data->get_all_community()->num_rows();
+		$data['pages'] = ceil($data['total_rows'] / $perpage);
+		$data['active'] = $activePage;
+		$data['community'] = $this->m_data->pagination_community($startData, $perpage)->result();
+		
+		$this->load->view('Admin/v_community_list', $data);
+	}
+
+	public function community_search($keyword = null)
+	{
+		
+		$activePage = 1;
+		$perpage = 2;
+		$data['total_rows'] = $this->m_data->get_community_keyword($keyword)->num_rows();
+		$data['pages'] = ceil($data['total_rows'] / $perpage);
+		$data['active'] = $activePage;
+
+		$startData = ($perpage * $activePage) - $perpage;
+		
+		$data['community'] = $this->m_data->pagination_community_keyword($keyword, $startData, $perpage)->result();
+		$this->load->view('Tables/tb_community', $data);
+	}
+
+	public function community_pagination_keyword($keyword = null, $activePage = null)
+	{
+		if(is_null($activePage)){
+			$activePage = 1;
+		}
+		$perpage = 2;
+		$data['total_rows'] = $this->m_data->get_community_keyword($keyword)->num_rows();
+		$data['pages'] = ceil($data['total_rows'] / $perpage);
+		$data['active'] = $activePage;
+
+		$startData = ($perpage * $activePage) - $perpage;
+		
+		$data['community'] = $this->m_data->pagination_community_keyword($keyword, $startData, $perpage)->result();
+		$this->load->view('Tables/tb_community', $data);
+	}
+
+	public function community_pagination($activePage = null)
+	{
+		if(is_null($activePage)){
+			$activePage = 1;
+		}
+		$perpage = 2;
+		$data['total_rows'] = $this->m_data->get_all_community()->num_rows();
+		$data['pages'] = ceil($data['total_rows'] / $perpage);
+		$data['active'] = $activePage;
+
+		$startData = ($perpage * $activePage) - $perpage;
+		$data['community'] = $this->m_data->pagination_community($startData, $perpage)->result();
+
+		$this->load->view('Tables/tb_community', $data);
+	}
+	// end Community
+	public function community_list_()
 	{
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$data['title'] = "COMMUNITY LIST";
