@@ -43,7 +43,7 @@
 									</a>
 									<ul class="pcoded-submenu">
 										<li class=" ">
-											<a href="<?= base_url('Admin/list_event'); ?>">
+											<a href="<?= base_url('Admin/event_list'); ?>">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Daftar Event</span>
 												<span class="pcoded-mcaret"></span>

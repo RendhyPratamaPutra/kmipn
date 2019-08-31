@@ -6,13 +6,13 @@
 </head>
 
 <body>
-	<div class="fixed-button">
-	<a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
-		<i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
-	</a>
-	</div>
-	<!-- Pre-loader start -->
+  <div class="fixed-button">
+  <a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
+  </a>
+  </div>
 
+	<!-- Pre-loader start -->
 	<div class="theme-loader">
 		<div class="loader-track">
 			<div class="loader-bar"></div>
@@ -44,7 +44,7 @@
 													<a href="#!">Basic Componenets</a>
 												</li>
 												<li class="breadcrumb-item">
-													<a href="#!">Bootstrap Basic Tables</>
+													<a href="#!">Bootstrap Basic Tables</a>
 												</li>
 											</ul>
 										</div>
@@ -71,50 +71,44 @@
 											<form action="" class="mt-2">
 												<div class="form-group row justify-content-end">
 													<div class="col-sm"></div>
-													<label class="col-sm-1 col-form-label" for="keyCommunity">Cari</label>
+													<label class="col-sm-1 col-form-label" for="keyEvent">Cari</label>
 													<div class="col-sm-3">
-														<input class="form-control form-control-round" type="text" id="keyCommunity">
+														<input class="form-control form-control-round" type="text" id="keyEvent">
 													</div>
 												</div>			
 											</form>
 										</div>
 										<div class="card-block table-border-style">
-											<div class="table-responsive" id="tbCommunity">
-												<table class="table" class="display">
+											<div class="table-responsive" id="tbEvent">
+												<table class="table">
 													<thead>
 														<tr>
 															<th>No</th>
-															<th>NAME</th>
-															<!-- <th>ADDRESS</th> -->
-															<th>CONTACT PERSON</th>
-															<th>EMAIL</th>
-															<th>POINT</th>
-															<th>ACTION</th>
+															<th>Name Event</th>
+															<th>Address</th>
+															<!-- <th>Description</th> -->
+															<th>Time&Date</th>
+															<th>Photo</th>
+															<th>Status Event</th>
+															<th>Action</th>
 														</tr>
 													</thead>
 													<tbody>
 														<?php
 														$no=1;
-														foreach ($community as $users)  
+														foreach($event as $e)
 														{
 														?>
 														<tr>
 															<th><?= $no++?></th>
-															<td><?php echo $users->name_community ?></td>
-															<!-- <td><?php echo $users->description ?></td> -->
-															<td><?php echo $users->contact_person ?></td>
-															<td><?php echo $users->status ?></td>
-															<td><?php echo $users->legality ?></td>
-															<td style="text-align:center" width="200px">
-																<?php 
-																echo anchor(site_url('users/read/'.$users->id_personal),'Read'); 
-																echo ' | '; 
-																echo anchor(site_url('users/update/'.$users->id_personal),'Update'); 
-																echo ' | '; 
-																echo anchor(site_url('users/delete/'.$users->id_personal),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
-																?>
-															</td>
-													</tr>
+															<td><?= $e->name_event?></td>
+															<td><?= $e->address?></td>
+															<!-- <td><?= $e->description?></td> -->
+															<td><?= $e->time?>, <?= $e->date ?></td>
+															<td><img src="<?php echo base_url('./upload/'.$e->photo) ?>"  width="100" /></td>
+															<td><?= $e->status_event?></td>
+															<td><button class="btn btn-danger btn-round">Hapus</button></td>
+														</tr>
 														<?php
 														
 													}?>
@@ -131,7 +125,7 @@
 														</li>
 														<?php  ?>
 														<?php for( $i = 1; $i <= $pages; $i++) : ?>
-															<li class="page-item <?php if($i == $active) { echo 'active'; } ?>"><a class="page-link" onClick="toPageCommunity(<?= $i; ?>)" ><?= $i; ?></a></li>
+															<li class="page-item <?php if($i == $active) { echo 'active'; } ?>"><a class="page-link" onClick="toPageEvent(<?= $i; ?>)" ><?= $i; ?></a></li>
 														<?php endfor ?>
 														<li class="page-item">
 															<a class="page-link" href="#" aria-label="Next">
