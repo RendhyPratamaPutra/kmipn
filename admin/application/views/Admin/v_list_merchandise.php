@@ -65,18 +65,31 @@
 													<li><i class="fa fa-times close-card"></i></li>
 												</ul>
 											</div>
+											<form action="" class="mt-2">
+												<div class="form-group row justify-content-end">
+													<div class="col-sm-2 text-right">
+														<?php echo anchor(site_url('Admin/create'), '+ Tambah Barang', 'class="btn btn-primary"'); ?>
+													</div>
+													<div class="col-sm"></div>
+													<label class="col-sm-1 col-form-label" for="keyMerchandise">Cari</label>
+													<div class="col-sm-3">
+														<input class="form-control form-control-round" type="text" id="keyMerchandise">
+													</div>
+												</div>			
+											</form>	
 
 										</div>
 										<div class="card-block table-border-style">
-											<div class="table-responsive">
+											<div class="table-responsive"  id="item_reedem">>
 												<table class="table">
 													<thead>
 														<tr>
 															<th>No</th>
 															<th>Name Item</th>
-															<th>Reedem Point</th>
-                                                            <th>Image</th>
-                                                            <th>Time & Date</th>
+															<th>Photo</th>
+                                                            <th>Point</th>
+															<th>Item</th>
+															<th>category</th>
 															<th>Action</th>
 														</tr>
 													</thead>
@@ -100,6 +113,27 @@
 													}?>
 													</tbody>
 												</table>
+												</table>
+												<hr>
+
+												<nav aria-label="Page navigation example" class="mt-4 d-flex justify-content-center">
+													<ul class="pagination">
+														<li class="page-item">
+															<a class="page-link" href="#" aria-label="Previous">
+																<span aria-hidden="true">&laquo;</span>
+															</a>
+														</li>
+														<?php  ?>
+														<?php for( $i = 1; $i <= $pages; $i++) : ?>
+															<li class="page-item <?php if($i == $active) { echo 'active'; } ?>"><a class="page-link" onClick="toPageEvent(<?= $i; ?>)" ><?= $i; ?></a></li>
+														<?php endfor ?>
+														<li class="page-item">
+															<a class="page-link" href="#" aria-label="Next">
+																<span aria-hidden="true">&raquo;</span>
+															</a>
+														</li>
+													</ul>
+												</nav>
 											</div>
 										</div>
                                     </div>

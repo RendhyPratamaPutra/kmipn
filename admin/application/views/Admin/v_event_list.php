@@ -70,6 +70,14 @@
 
 											<form action="" class="mt-2">
 												<div class="form-group row justify-content-end">
+													<div class="col-md-12 text-center">
+            				                            <div style="margin-top: 4px"  id="message">
+                            				                <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
+                                        				</div>
+                               					 	</div>
+													<div class="col-sm-2 text-right">
+														<?php echo anchor(site_url('event/v_add_event'), '+ Tambah Event', 'class="btn btn-primary"'); ?>
+													</div>
 													<div class="col-sm"></div>
 													<label class="col-sm-1 col-form-label" for="keyEvent">Cari</label>
 													<div class="col-sm-3">

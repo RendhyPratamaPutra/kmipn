@@ -153,6 +153,29 @@ class Admin extends CI_Controller
 		
 		$this->load->view('Admin/v_personal_list', $data);
 	}
+	public function read($id) 
+    {
+        $row = $this->personal_model->get_id($id);
+        if ($row) {
+            $data = array(
+		'id_personal' => $row->id_personal,
+		'name' => $row->name,
+		'address' => $row->address,
+		'contac_person' => $row->contact_person,
+		'email' => $row->email,
+		'password' => $row->password,
+		'jk' => $row->jk,
+		'date_register' => $row->date_register,
+		'photo' => $row->photo,
+		'point' => $row->point,
+		'role_id' => $row->role_id,
+		);
+            $this->load->view('Admin/v_personal_list', $data);
+        } else {
+            $this->session->set_flashdata('message', 'Record Not Found');
+            redirect(site_url('Admin'));
+        }
+    }
 
 	public function personal_search($keyword = null)
 	{
@@ -218,7 +241,9 @@ class Admin extends CI_Controller
 		$data['event'] = $this->m_data->pagination_event($startData, $perpage)->result();
 		
 		$this->load->view('Admin/v_event_list', $data);
+		
 	}
+	
 
 	public function event_search($keyword = null)
 	{

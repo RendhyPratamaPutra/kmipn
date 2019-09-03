@@ -35,7 +35,7 @@
 									<!-- Page-header start -->
 									<div class="page-header card">
 										<div class="card-block">
-											<h5 class="m-b-10">Daftar Event Bersihnesia</h5>
+											<h5 class="m-b-10">List community Bersihnesia</h5>
 											<ul class="breadcrumb-title b-t-default p-t-10">
 												<li class="breadcrumb-item">
 													<a href="index.html"> <i class="fa fa-home"></i> </a>
@@ -56,7 +56,7 @@
 									<!-- Basic table card start -->
 									<div class="card">
 										<div class="card-header">
-											<h5>Event Bersihnesia</h5>
+											<h5>Community Bersihnesia</h5>
 											
 											<div class="card-header-right">
 												<ul class="list-unstyled card-option">
@@ -70,6 +70,9 @@
 
 											<form action="" class="mt-2">
 												<div class="form-group row justify-content-end">
+													<div class="col-sm-2 text-right">
+														<?php echo anchor(site_url('personal/create'), '+ Tambah Komunitas', 'class="btn btn-primary"'); ?>
+													</div>
 													<div class="col-sm"></div>
 													<label class="col-sm-1 col-form-label" for="keyCommunity">Cari</label>
 													<div class="col-sm-3">

@@ -115,6 +115,7 @@ function pagination_event_keyword($keyword, $dataStart, $perpage){
     $this->db->limit($perpage, $dataStart);
 
     return $this->db->get();
+    
 }
 // end Event
 
