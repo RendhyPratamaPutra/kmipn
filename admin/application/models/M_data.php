@@ -18,21 +18,16 @@ function cek_login($email,$password){
     $data = $this->db->get('personal')->row_array();
     return $data;
 }
-
-
 function get_all_personal()
 {
     return $this->db->get('personal');
 }
-
 function pagination_personal($dataStart, $perpage){
         // return  $this->db->get('personal');
     $this->db->select('*');
     $this->db->from('personal');
     $this->db->limit($perpage, $dataStart);
     // $this->db->limit(2, 1);
-
-
     return $this->db->get();
 }
 
@@ -83,5 +78,11 @@ function get_req()
 		return $this->db->get_where('community', ['status' => 0]);
 
 }
+
+function delete_reedem($id_act)
+    {
+        $this->db->where('id_act', $id_act);
+        $this->db->delete('act_reedem');
+    }
 }
 ?>

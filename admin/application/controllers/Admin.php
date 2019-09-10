@@ -206,4 +206,23 @@ class Admin extends CI_Controller
 		$data['community'] = $this->m_data->get_req()->result();
 		$this->load->view('Admin/request_community', $data);
 	}
+
+	public function request_reedem()
+	{
+		$data['title'] = 'REQUEST REEDEM - BERSIHNESIA';	
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['act_reedem'] = $this->db->get('act_reedem')->result();
+		$this->load->view('Admin/v_request_reedem', $data);
+	}
+
+	public function delete_reedem($id_act)
+    {
+
+        if ($id_act) {
+            $this->m_data->delete_reedem($id_act);
+            redirect('Admin/request_reedem');
+        } else {
+            redirect('Admin/request_reedem');
+        }
+    }
 }

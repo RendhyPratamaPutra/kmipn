@@ -19,7 +19,7 @@
 									</a>
 									<ul class="pcoded-submenu">
 										<li class=" ">
-											<a href="#">
+											<a href="<?= base_url('Admin/request_reedem'); ?>">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Voucher</span>
 												<span class="pcoded-mcaret"></span>
