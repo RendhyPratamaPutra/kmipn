@@ -182,5 +182,11 @@ function delete_reedem($id_act)
         $this->db->where('id_act', $id_act);
         $this->db->delete('act_reedem');
     }
+
+    public function getreedem() {
+
+        $query = "SELECT `act_reedem`.* , `item_reedem`.`name_item`, `item_reedem`.`category` FROM `act_reedem` JOIN `item_reedem` ON `act_reedem`.`id_item` = `item_reedem`.`id_item`";
+
+        return $this->db->query($query)->result_array();
+    }
 }
-?>

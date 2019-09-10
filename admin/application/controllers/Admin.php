@@ -379,7 +379,9 @@ class Admin extends CI_Controller
 	{
 		$data['title'] = 'REQUEST REEDEM - BERSIHNESIA';	
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
-		$data['act_reedem'] = $this->db->get('act_reedem')->result();
+	
+		$data['act_reedem'] = $this->m_data->getreedem();
+        $data['item_reedem'] = $this->db->get('item_reedem')->result();
 		$this->load->view('Admin/v_request_reedem', $data);
 	}
 
