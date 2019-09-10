@@ -86,9 +86,9 @@
 														<tr>
 															<th>No</th>
 															<th>Name Item</th>
-															<th>Photo</th>
-                                                            <th>Point</th>
 															<th>Item</th>
+                                                            <th>Point</th>
+															<th>Image</th>
 															<th>category</th>
 															<th>Action</th>
 														</tr>
@@ -102,8 +102,8 @@
 														<tr>
 															<th><?= $no++?></th>
 															<td><?= $item->name_item?></td>
-															<td><?= $item->reedem_point?></td>
-															<td><?= $item->time_date?></td>
+															<td><?= $item->jumlah_item?></td>
+															<td><?= $item->jumlah_point?></td>
 															<td><img src="<?php echo base_url('./upload/'.$item->photo) ?>"  width="100" /></td>
 															<td><?= $item->category?></td>
 															<td><button class="btn btn-danger btn-round">Delete</button></td>
