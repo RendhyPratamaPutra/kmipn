@@ -394,5 +394,12 @@ class Admin extends CI_Controller
         } else {
             redirect('Admin/request_reedem');
         }
-    }
+	}
+	
+	public function tambah_point()
+	{
+		$data['title'] = 'ADD POINT - BERSIHNESIA';	
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$this->load->view('Admin/v_tambah_point', $data);
+	}
 }

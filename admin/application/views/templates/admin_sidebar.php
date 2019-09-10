@@ -89,7 +89,7 @@
 									</a>
 									<ul class="pcoded-submenu">
 										<li>
-											<a href="accordion.html">
+											<a href="?= base_url('Admin/tambah_point'); ?>">
 												<span class="pcoded-micon"><i class="ti-"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tambah Voucher</span>
 												<span class="pcoded-mcaret"></span>
