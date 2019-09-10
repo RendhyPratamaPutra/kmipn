@@ -38,7 +38,7 @@ function get_personal_keyword($keyword){
     $this->db->or_like('id_personal', $keyword, 'both');
     $this->db->or_like('name', $keyword, 'both');
     $this->db->or_like('address', $keyword, 'both');
-    $this->db->or_like('contac_person', $keyword, 'both');
+    $this->db->or_like('contact_person', $keyword, 'both');
     $this->db->or_like('email', $keyword, 'both');
     // $this->db->limit($perpage, $dataStart);
     // $this->db->limit(2, 0);
@@ -53,7 +53,7 @@ function pagination_personal_keyword($keyword, $dataStart, $perpage){
     $this->db->or_like('id_personal', $keyword, 'both');
     $this->db->or_like('name', $keyword, 'both');
     $this->db->or_like('address', $keyword, 'both');
-    $this->db->or_like('contac_person', $keyword, 'both');
+    $this->db->or_like('contact_person', $keyword, 'both');
     $this->db->or_like('email', $keyword, 'both');
     $this->db->limit($perpage, $dataStart);
     // $this->db->limit($dataStart, $perpage);
@@ -61,8 +61,106 @@ function pagination_personal_keyword($keyword, $dataStart, $perpage){
 
     return $this->db->get();
 }
+// end Personal
 
+
+// Event
+function get_all_event()
+{
+    return $this->db->get('tb_event');
+}
+
+function pagination_event($dataStart, $perpage){
+        // return  $this->db->get('personal');
+    $this->db->select('*');
+    $this->db->from('tb_event');
+    $this->db->limit($perpage, $dataStart);
+    // $this->db->limit(2, 1);
+
+
+    return $this->db->get();
+}
+
+function get_event_keyword($keyword){
+
+    // not finished yet
+    $this->db->select('*');
+    $this->db->from('tb_event');
+    $this->db->or_like('id_event', $keyword, 'both');
+    $this->db->or_like('id_community', $keyword, 'both');
+    $this->db->or_like('name_event', $keyword, 'both');
+    // $this->db->or_like('description', $keyword, 'both');
+    $this->db->or_like('address', $keyword, 'both');
+    $this->db->or_like('status_event', $keyword, 'both');
+
+    return $this->db->get();
+}
+
+function pagination_event_keyword($keyword, $dataStart, $perpage){
+    
+    // not finisfhed yet
+    $this->db->select('*');
+    $this->db->from('tb_event');
+    $this->db->or_like('id_event', $keyword, 'both');
+    $this->db->or_like('id_community', $keyword, 'both');
+    $this->db->or_like('name_event', $keyword, 'both');
+    // $this->db->or_like('description', $keyword, 'both');
+    $this->db->or_like('address', $keyword, 'both');
+    $this->db->or_like('status_event', $keyword, 'both');
+    $this->db->limit($perpage, $dataStart);
+
+    return $this->db->get();
+    
+}
+// end Event
+
+
+// Community
 function get_all_community()
+{
+    return $this->db->get('community');
+}
+
+function pagination_community($dataStart, $perpage){
+        // return  $this->db->get('personal');
+    $this->db->select('*');
+    $this->db->from('community');
+    $this->db->limit($perpage, $dataStart);
+    // $this->db->limit(2, 1);
+
+
+    return $this->db->get();
+}
+
+function get_community_keyword($keyword){
+
+    // not finished yet
+    $this->db->select('*');
+    $this->db->from('community');
+    $this->db->or_like('id_community', $keyword, 'both');
+    $this->db->or_like('name_community', $keyword, 'both');
+    // $this->db->or_like('contact_person', $keyword, 'both');
+    // $this->db->or_like('address', $keyword, 'both');
+    // $this->db->or_like('status_event', $keyword, 'both');
+
+    return $this->db->get();
+}
+
+function pagination_community_keyword($keyword, $dataStart, $perpage){
+    
+    // not finisfhed yet
+    $this->db->select('*');
+    $this->db->from('community');
+    $this->db->or_like('id_community', $keyword, 'both');
+    $this->db->or_like('name_community', $keyword, 'both');
+    $this->db->limit($perpage, $dataStart);
+
+    return $this->db->get();
+}
+// end Community
+
+
+function get_all_community_()
 {
         return  $this->db->get('community');
 }

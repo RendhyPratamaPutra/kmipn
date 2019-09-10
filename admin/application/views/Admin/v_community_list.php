@@ -35,7 +35,7 @@
 									<!-- Page-header start -->
 									<div class="page-header card">
 										<div class="card-block">
-											<h5 class="m-b-10">Daftar Event Bersihnesia</h5>
+											<h5 class="m-b-10">List community Bersihnesia</h5>
 											<ul class="breadcrumb-title b-t-default p-t-10">
 												<li class="breadcrumb-item">
 													<a href="index.html"> <i class="fa fa-home"></i> </a>
@@ -56,7 +56,7 @@
 									<!-- Basic table card start -->
 									<div class="card">
 										<div class="card-header">
-											<h5>Event Bersihnesia</h5>
+											<h5>Community Bersihnesia</h5>
 											
 											<div class="card-header-right">
 												<ul class="list-unstyled card-option">
@@ -68,16 +68,28 @@
 												</ul>
 											</div>
 
+											<form action="" class="mt-2">
+												<div class="form-group row justify-content-end">
+													<div class="col-sm-2 text-right">
+														<?php echo anchor(site_url('personal/create'), '+ Tambah Komunitas', 'class="btn btn-primary"'); ?>
+													</div>
+													<div class="col-sm"></div>
+													<label class="col-sm-1 col-form-label" for="keyCommunity">Cari</label>
+													<div class="col-sm-3">
+														<input class="form-control form-control-round" type="text" id="keyCommunity">
+													</div>
+												</div>			
+											</form>
 										</div>
 										<div class="card-block table-border-style">
-											<div class="table-responsive">
-												<table class="table" id="table_id" class="display">
+											<div class="table-responsive" id="tbCommunity">
+												<table class="table" class="display">
 													<thead>
 														<tr>
 															<th>No</th>
 															<th>NAME</th>
-															<th>ADDRESS</th>
-															<th>CONTAC PERSON</th>
+															<!-- <th>ADDRESS</th> -->
+															<th>CONTACT PERSON</th>
 															<th>EMAIL</th>
 															<th>POINT</th>
 															<th>ACTION</th>
@@ -92,8 +104,8 @@
 														<tr>
 															<th><?= $no++?></th>
 															<td><?php echo $users->name_community ?></td>
-															<td><?php echo $users->description ?></td>
-															<td><?php echo $users->contac_person ?></td>
+															<!-- <td><?php echo $users->description ?></td> -->
+															<td><?php echo $users->contact_person ?></td>
 															<td><?php echo $users->status ?></td>
 															<td><?php echo $users->legality ?></td>
 															<td style="text-align:center" width="200px">
@@ -111,6 +123,26 @@
 													}?>
 													</tbody>
 												</table>
+												<hr>
+
+												<nav aria-label="Page navigation example" class="mt-4 d-flex justify-content-center">
+													<ul class="pagination">
+														<li class="page-item">
+															<a class="page-link" href="#" aria-label="Previous">
+																<span aria-hidden="true">&laquo;</span>
+															</a>
+														</li>
+														<?php  ?>
+														<?php for( $i = 1; $i <= $pages; $i++) : ?>
+															<li class="page-item <?php if($i == $active) { echo 'active'; } ?>"><a class="page-link" onClick="toPageCommunity(<?= $i; ?>)" ><?= $i; ?></a></li>
+														<?php endfor ?>
+														<li class="page-item">
+															<a class="page-link" href="#" aria-label="Next">
+																<span aria-hidden="true">&raquo;</span>
+															</a>
+														</li>
+													</ul>
+												</nav>
 											</div>
 										</div>
 									</div>

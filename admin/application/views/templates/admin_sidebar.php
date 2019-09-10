@@ -43,7 +43,7 @@
 									</a>
 									<ul class="pcoded-submenu">
 										<li class=" ">
-											<a href="<?= base_url('Admin/list_event'); ?>">
+											<a href="<?= base_url('Admin/event_list'); ?>">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Daftar Event</span>
 												<span class="pcoded-mcaret"></span>
@@ -102,9 +102,9 @@
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Stok Voucher</span>
 												<span class="pcoded-mcaret"></span>
 											</a>
-										</li>
-										<li>    
-											<a href="accordion.html">
+											</li>
+											<li>    
+											<a href="<?= base_url('Admin/list_merchandise'); ?>">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Merchandise</span>
 												<span class="pcoded-mcaret"></span>
@@ -135,7 +135,7 @@
 											</a>
 										</li>
 										<li class=" ">    
-											<a href="accordion.html">
+											<a href="<?= base_url('Admin/'); ?>">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tentang Kami</span>
 												<span class="pcoded-mcaret"></span>

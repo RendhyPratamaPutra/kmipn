@@ -68,16 +68,33 @@
 												</ul>
 											</div>
 
+											<form action="" class="mt-2">
+												<div class="form-group row justify-content-end">
+													<div class="col-md-12 text-center">
+            				                            <div style="margin-top: 4px"  id="message">
+                            				                <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
+                                        				</div>
+                               					 	</div>
+													<div class="col-sm-2 text-right">
+														<?php echo anchor(site_url('event/v_add_event'), '+ Tambah Event', 'class="btn btn-primary"'); ?>
+													</div>
+													<div class="col-sm"></div>
+													<label class="col-sm-1 col-form-label" for="keyEvent">Cari</label>
+													<div class="col-sm-3">
+														<input class="form-control form-control-round" type="text" id="keyEvent">
+													</div>
+												</div>			
+											</form>
 										</div>
 										<div class="card-block table-border-style">
-											<div class="table-responsive">
+											<div class="table-responsive" id="tbEvent">
 												<table class="table">
 													<thead>
 														<tr>
 															<th>No</th>
 															<th>Name Event</th>
 															<th>Address</th>
-															<th>Description</th>
+															<!-- <th>Description</th> -->
 															<th>Time&Date</th>
 															<th>Photo</th>
 															<th>Status Event</th>
@@ -87,15 +104,15 @@
 													<tbody>
 														<?php
 														$no=1;
-														foreach($tb_event as $e)
+														foreach($event as $e)
 														{
 														?>
 														<tr>
 															<th><?= $no++?></th>
 															<td><?= $e->name_event?></td>
 															<td><?= $e->address?></td>
-															<td><?= $e->description?></td>
-															<td><?= $e->date_time?></td>
+															<!-- <td><?= $e->description?></td> -->
+															<td><?= $e->time?>, <?= $e->date ?></td>
 															<td><img src="<?php echo base_url('./upload/'.$e->photo) ?>"  width="100" /></td>
 															<td><?= $e->status_event?></td>
 															<td><button class="btn btn-danger btn-round">Hapus</button></td>
@@ -105,6 +122,26 @@
 													}?>
 													</tbody>
 												</table>
+												<hr>
+
+												<nav aria-label="Page navigation example" class="mt-4 d-flex justify-content-center">
+													<ul class="pagination">
+														<li class="page-item">
+															<a class="page-link" href="#" aria-label="Previous">
+																<span aria-hidden="true">&laquo;</span>
+															</a>
+														</li>
+														<?php  ?>
+														<?php for( $i = 1; $i <= $pages; $i++) : ?>
+															<li class="page-item <?php if($i == $active) { echo 'active'; } ?>"><a class="page-link" onClick="toPageEvent(<?= $i; ?>)" ><?= $i; ?></a></li>
+														<?php endfor ?>
+														<li class="page-item">
+															<a class="page-link" href="#" aria-label="Next">
+																<span aria-hidden="true">&raquo;</span>
+															</a>
+														</li>
+													</ul>
+												</nav>
 											</div>
 										</div>
 									</div>
