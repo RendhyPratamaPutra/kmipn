@@ -74,9 +74,15 @@
 														<h4 class="sub-title">Form Event</h4>
 														<?php echo form_open_multipart(); ?>
 														<div class="form-group row">
-															<label class="col-sm-2 col-form-label">ID PERSONAL</label>
+															<label class="col-sm-2 col-form-label">ID</label>
 															<div class="col-sm-5">
 																<input type="number" name="id_personal" class="form-control" placeholder="Masukkan Id Personal">
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-2 col-form-label">NAMA</label>
+															<div class="col-sm-5">
+																<input type="number" name="nama_personal" class="form-control" placeholder="Masukkan Id Personal">
 															</div>
 														</div>
 														<div class="form-group row">
@@ -120,7 +126,13 @@
 														</div>
 														<div class="sub-title"></div>
 														<div class="form-group row justify-content-end">
-															<button class="btn btn-success btn-round">Buat Event</button>
+															<div class="col-sm-1">
+																<a class="btn btn-danger btn-round" href="">Decline</a>
+															</div>
+															<div class="col-sm-1 mr-4">
+																<button class="btn btn-success btn-round">Confirm</button>																
+															</div>
+															
 														</div>
 														<?php echo form_close(); ?>
 													</div>
