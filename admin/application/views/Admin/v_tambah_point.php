@@ -88,28 +88,34 @@
 														<div class="form-group row">
 															<label class="col-sm-2 col-form-label">Sampah Plastik</label>
 															<div class="col-sm-2">
-																<input type="number" name="sampah_plastik" class="form-control" placeholder="masukkan total point">
+																<input type="number" name="sampah_plastik" id="sampah_plastik" class="form-control" onchange="return totalpointplastik()" required placeholder="masukkan total point">
 															</div>
 															<div class="col-sm-1">
-																<input type="number" name="" class="form-control" readonly> <i></i>
+																<input type="text" id="point_plastik" name="point_plastik" class="form-control" readonly> <i></i>
 															</div>
 														</div>
                                                         <div class="form-group row">
 															<label class="col-sm-2 col-form-label">Sampah Logam</label>
-															<div class="col-sm-2">
-																<input type="number" name="sampah_logam" class="form-control" placeholder="masukkan total point">
+                                                            <div class="col-sm-2">
+																<input type="number" name="sampah_logam" id="sampah_logam" class="form-control" onchange="return totalpointlogam()" required placeholder="masukkan total point">
 															</div>
 															<div class="col-sm-1">
-																<input type="number" name="" class="form-control" readonly>
+																<input type="text" id="point_logam" name="point_logam" class="form-control" readonly> <i></i>
 															</div>
                                                         </div>
                                                         <div class="form-group row">
 															<label class="col-sm-2 col-form-label">Sampah Lainnya</label>
-															<div class="col-sm-2">
-																<input type="number" name="sampah_lain" class="form-control" placeholder="masukkan total point">
+                                                            <div class="col-sm-2">
+																<input type="number" name="sampah_lain" id="sampah_lain" class="form-control" onchange="return totalpointlainnya()" required placeholder="masukkan total point">
 															</div>
 															<div class="col-sm-1">
-																<input type="number" name="" class="form-control" readonly>
+																<input type="text" id="point_lain" name="point_lain" class="form-control" readonly> <i></i>
+															</div>
+                                                        </div>
+                                                        <div class="form-group row">
+															<label class="col-sm-2 col-form-label"> Total Point</label>
+                                                            <div class="col-sm-2">
+																<input type="number" name="total_poin" id="total_poin" class="form-control" onchange="return totalpointlainnya()" required placeholder="masukkan total point">
 															</div>
 														</div>
 														<div class="sub-title"></div>
@@ -135,16 +141,50 @@
 
 function totalpointplastik(){
     
-    var jumlah= parseInt(document.getElementById("jumlah").value);
+    var jumlah= parseInt(document.getElementById("sampah_plastik").value);
    
 
 
     console.log(jumlah);
     
 
-    var total = document.getElementById("total_harga");
-   total.placeholder = jumlah*10+"";
-    total.value=jumlah*10;
+    var total = document.getElementById("point_plastik");
+   total.placeholder = jumlah*50+"";
+    total.value=jumlah*50;
+}
+
+</script>
+                            <script>
+
+function totalpointlogam(){
+    
+    var jumlah= parseInt(document.getElementById("sampah_logam").value);
+   
+
+
+    console.log(jumlah);
+    
+
+    var total = document.getElementById("point_logam");
+   total.placeholder = jumlah*100+"";
+    total.value=jumlah*100;
+}
+
+</script>
+                            <script>
+
+function totalpointlainnya(){
+    
+    var jumlah= parseInt(document.getElementById("sampah_lain").value);
+   
+
+
+    console.log(jumlah);
+    
+
+    var total = document.getElementById("point_lain");
+   total.placeholder = jumlah*25+"";
+    total.value=jumlah*25;
 }
 
 </script>
