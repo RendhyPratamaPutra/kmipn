@@ -87,16 +87,16 @@
 														</div>
 														<div class="form-group row">
 															<label class="col-sm-2 col-form-label">Sampah Plastik</label>
-															<div class="col-sm-4">
+															<div class="col-sm-2">
 																<input type="number" name="sampah_plastik" class="form-control" placeholder="masukkan total point">
 															</div>
 															<div class="col-sm-1">
-																<input type="number" name="" class="form-control" readonly>
+																<input type="number" name="" class="form-control" readonly> <i></i>
 															</div>
 														</div>
                                                         <div class="form-group row">
 															<label class="col-sm-2 col-form-label">Sampah Logam</label>
-															<div class="col-sm-4">
+															<div class="col-sm-2">
 																<input type="number" name="sampah_logam" class="form-control" placeholder="masukkan total point">
 															</div>
 															<div class="col-sm-1">
@@ -105,7 +105,7 @@
                                                         </div>
                                                         <div class="form-group row">
 															<label class="col-sm-2 col-form-label">Sampah Lainnya</label>
-															<div class="col-sm-4">
+															<div class="col-sm-2">
 																<input type="number" name="sampah_lain" class="form-control" placeholder="masukkan total point">
 															</div>
 															<div class="col-sm-1">
