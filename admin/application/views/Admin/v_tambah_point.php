@@ -133,10 +133,10 @@
                             <!-- Required Jquery -->
                             <script>
 
-function totalBayar(){
+function totalpointplastik(){
     
     var jumlah= parseInt(document.getElementById("jumlah").value);
-    var harga= parseInt(document.getElementById("harga").value);
+    var harga= parseInt((10).value);
 
 
     console.log(jumlah);
