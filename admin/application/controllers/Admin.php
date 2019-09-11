@@ -403,6 +403,13 @@ class Admin extends CI_Controller
 		$this->load->view('Admin/v_tambah_voucher', $data);
 	}
 
+	public function tambah_point()
+	{
+		$data['title'] = 'ADD EVENT - BERSIHNESIA';	
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$this->load->view('Admin/v_tambah_point', $data);
+	}
+
 	public function event_approved()
 	{
 		$data['title'] = 'EVENT APPROVED - BERSIHNESIA';	
