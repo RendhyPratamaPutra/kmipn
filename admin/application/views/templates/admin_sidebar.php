@@ -178,9 +178,16 @@
 									</a>
 								</li> -->
 								<li>
-									<a href="map-google.html">
+									<a href="<?= base_url('Admin/report_lokasi'); ?>">
 										<span class="pcoded-micon"><i class="ti-map-alt"></i><b>FC</b></span>
-										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Maps</span>
+										<span class="pcoded-mtext" data-i18n="nav.form-components.main">REPORT BELUM DISELEKSI</span>
+										<span class="pcoded-mcaret"></span>
+									</a>
+								</li>
+								<li>
+									<a href="<?= base_url('Admin/report_lokasi_seleksi'); ?>">
+										<span class="pcoded-micon"><i class="ti-map-alt"></i><b>FC</b></span>
+										<span class="pcoded-mtext" data-i18n="nav.form-components.main">REPORT TERSELEKSI</span>
 										<span class="pcoded-mcaret"></span>
 									</a>
 								</li>

@@ -1,12 +1,11 @@
 <?php
 class M_data extends CI_Model{
     public $id_event  = 'id_event';
+    public $id_report  = 'id_report';
     public $id_community  = 'id_community';
-    public $tgl = 'tgl_pesan';
-    public $jumlah = 'jumlah';
     public $tabel_event = 'tb_event';
+    public $tabel_report = 'report';
     public $tabel_community = 'community';
-    public $gambar = "default.jpg";
     public $id_barang;
     public $nama_barang;
     public $jenis_barang;
@@ -239,6 +238,11 @@ function delete_reedem($id_act)
         $this->db->where('id_act', $id_act);
         $this->db->delete('act_reedem');
     }
+    function delete_report($id_report)
+    {
+        $this->db->where('id_report', $id_report);
+        $this->db->delete('report');
+    }
 
     public function getreedem() {
 
@@ -273,6 +277,22 @@ function delete_reedem($id_act)
         return $this->db->query($query)->result_array();
     }
 
+
+    public function getreport() {
+
+        $query = "SELECT `report`.* , `personal`.`name` FROM `report` JOIN `personal` ON `report`.`id_personal` = `personal`.`id_personal` WHERE `report`.`status`='Belum Diseleksi'";
+
+        return $this->db->query($query)->result_array();
+    }
+    
+    public function getreportseleksi() {
+
+        $query = "SELECT `report`.* , `personal`.`name` FROM `report` JOIN `personal` ON `report`.`id_personal` = `personal`.`id_personal` WHERE `report`.`status`='Terseleksi'";
+
+        return $this->db->query($query)->result_array();
+    }
+
+
     function confirm_approved($data, $id_event)
     {
         $confirm_approved = $this->db->select("*")->from($this->tabel_event)->where("id_event", $id_event)->get()->row();
@@ -282,13 +302,13 @@ function delete_reedem($id_act)
         return $confirm_approved->id_event;
     }
 
-    function confirm_community_approved($data, $id_community)
+    function confirm_report_approved($data, $id_report)
     {
-        $confirm_community_approved = $this->db->select("*")->from($this->tabel_community)->where("id_community", $id_community)->get()->row();
-        $this->db->query("Update community set `community`.`status`='" . $data . "' where id_community='" . $id_community . "'", FALSE);
-        $this->db->where("id_community", $id_community);
-        $this->db->update($this->tabel_community, $data);
-        return $confirm_community_approved->id_community;
+        $confirm_community_approved = $this->db->select("*")->from($this->tabel_report)->where("id_report", $id_report)->get()->row();
+        $this->db->query("Update report set `report`.`status`='" . $data . "' where id_report='" . $id_report . "'", FALSE);
+        $this->db->where("id_report", $id_report);
+        $this->db->update($this->tabel_report, $data);
+        return $confirm_community_approved->id_report;
     }
 
  

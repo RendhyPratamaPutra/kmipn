@@ -424,6 +424,42 @@ class Admin extends CI_Controller
 		redirect('Admin/event_non_approved');
 	}
 
+	public function report_lokasi()
+	{
+		$data['title'] = 'REPORT LOKASI - BERSIHNESIA';
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['report'] = $this->m_data->getreport();
+		$data['personal'] = $this->db->get('personal')->result();
+		$this->load->view('Admin/v_report_lokasi', $data);
+	}
+
+	public function status_report_approved($id_report)
+	{
+		$data["status"] = 'Terseleksi';
+		$this->m_data->confirm_report_approved($data, $id_report);
+		redirect('Admin/report_lokasi');
+	}
+
+	public function report_lokasi_seleksi()
+	{
+		$data['title'] = 'REPORT LOKASI - BERSIHNESIA';
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['report'] = $this->m_data->getreportseleksi();
+		$data['personal'] = $this->db->get('personal')->result();
+		$this->load->view('Admin/v_report_lokasi_terseleksi', $data);
+	}
+
+	public function done_report($id_report)
+	{
+
+		if ($id_report) {
+			$this->m_data->delete_report($id_report);
+			redirect('Admin/report_lokasi_seleksi');
+		} else {
+			redirect('Admin/report_lokasi_seleksi');
+		}
+	}
+
 	public function request()
 	{
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
