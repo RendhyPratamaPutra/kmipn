@@ -96,7 +96,7 @@
 														</div>
                                                         <div class="form-group row">
 															<label class="col-sm-2 col-form-label">Sampah Logam</label>
-															<div class="col-sm-10">
+															<div class="col-sm-9">
 																<input type="number" name="sampah_logam" class="form-control" placeholder="masukkan total point">
 															</div>
 															<div class="col-sm">
@@ -105,7 +105,7 @@
                                                         </div>
                                                         <div class="form-group row">
 															<label class="col-sm-2 col-form-label">Sampah Lainnya</label>
-															<div class="col-sm-10">
+															<div class="col-sm-9">
 																<input type="number" name="sampah_lain" class="form-control" placeholder="masukkan total point">
 															</div>
 															<div class="col-sm">
