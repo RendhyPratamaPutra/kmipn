@@ -73,6 +73,7 @@
 													<div class="card-block">
 														<h4 class="sub-title">Form Event</h4>
 														<?php echo form_open_multipart(); ?>
+														<input type="hidden" name="id_trans_sampah" value="">
 														<div class="form-group row">
 															<label class="col-sm-2 col-form-label">ID</label>
 															<div class="col-sm-5">
