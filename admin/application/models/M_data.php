@@ -151,8 +151,8 @@ function get_community_keyword($keyword){
     $this->db->from('community');
     $this->db->or_like('id_community', $keyword, 'both');
     $this->db->or_like('name_community', $keyword, 'both');
-    // $this->db->or_like('contact_person', $keyword, 'both');
-    // $this->db->or_like('address', $keyword, 'both');
+    $this->db->or_like('jumlah_point', $keyword, 'both');
+    $this->db->or_like('jumlah_item', $keyword, 'both');
     // $this->db->or_like('status_event', $keyword, 'both');
 
     return $this->db->get();
@@ -171,6 +171,49 @@ function pagination_community_keyword($keyword, $dataStart, $perpage){
 }
 // end Community
 
+//merchandise
+function get_all_item_reedem()
+{
+    return $this->db->get('item_reedem');
+}
+
+function pagination_item_reedem($dataStart, $perpage){
+        // return  $this->db->get('personal');
+    $this->db->select('*');
+    $this->db->from('item_reedem');
+    $this->db->limit($perpage, $dataStart);
+    // $this->db->limit(2, 1);
+
+
+    return $this->db->get();
+}
+
+function get_item_reedem_keyword($keyword){
+
+    // not finished yet
+    $this->db->select('*');
+    $this->db->from('item_reedem');
+    $this->db->or_like('id_item', $keyword, 'both');
+    $this->db->or_like('name_item', $keyword, 'both');
+    // $this->db->or_like('contact_person', $keyword, 'both');
+    // $this->db->or_like('address', $keyword, 'both');
+    // $this->db->or_like('status_event', $keyword, 'both');
+
+    return $this->db->get();
+}
+
+function pagination_item_reedem_keyword($keyword, $dataStart, $perpage){
+    
+    // not finisfhed yet
+    $this->db->select('*');
+    $this->db->from('item_reedem');
+    $this->db->or_like('id_item', $keyword, 'both');
+    $this->db->or_like('name_item', $keyword, 'both');
+    $this->db->limit($perpage, $dataStart);
+
+    return $this->db->get();
+}
+//end merchandise
 
 function get_all_community_()
 {
