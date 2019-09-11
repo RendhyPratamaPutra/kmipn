@@ -86,21 +86,23 @@
 															</div>
 														</div>
 														<div class="form-group row">
-															<label class="col-sm-2 col-form-label">Jumlah Point</label>
+															<label class="col-sm-2 col-form-label">Sampah Plastik</label>
 															<div class="col-sm-10">
-																<input type="number" name="jumlah_point" class="form-control" placeholder="masukkan total point">
+																<input type="number" name="sampah_plastik" class="form-control" placeholder="masukkan total point">
 															</div>
 														</div>
-														<div class="form-group row">
-															<label class="col-sm-2 col-form-label">Tanggal dan Waktu</label>
-															<div class="col-sm-10 row">
-																<div class="col-sm-5">
-																	<input type="date" name="date" class="form-control">
-																</div>
-																<div class="col-sm-5"><input type="time" name="time" class="form-control"></div>
+                                                        <div class="form-group row">
+															<label class="col-sm-2 col-form-label">Sampah Logam</label>
+															<div class="col-sm-10">
+																<input type="number" name="sampah_logam" class="form-control" placeholder="masukkan total point">
+															</div>
+                                                        </div>
+                                                        <div class="form-group row">
+															<label class="col-sm-2 col-form-label">Sampah Lainnya</label>
+															<div class="col-sm-10">
+																<input type="number" name="sampah_lain" class="form-control" placeholder="masukkan total point">
 															</div>
 														</div>
-
 														<div class="sub-title"></div>
 														<div class="form-group row justify-content-end">
 															<button class="btn btn-success btn-round">Buat Event</button>
@@ -117,52 +119,26 @@
 							</div>
 
 
-							<!-- Warning Section Starts -->
-							<!-- Older IE warning message -->
-							<!--[if lt IE 9]>
-<div class="ie-warning">
-	<h1>Warning!!</h1>
-	<p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers
-		to access this website.</p>
-	<div class="iew-container">
-		<ul class="iew-download">
-			<li>
-				<a href="http://www.google.com/chrome/">
-					<img src="assets/images/browser/chrome.png" alt="Chrome">
-					<div>Chrome</div>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.mozilla.org/en-US/firefox/new/">
-					<img src="assets/images/browser/firefox.png" alt="Firefox">
-					<div>Firefox</div>
-				</a>
-			</li>
-			<li>
-				<a href="http://www.opera.com">
-					<img src="assets/images/browser/opera.png" alt="Opera">
-					<div>Opera</div>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.apple.com/safari/">
-					<img src="assets/images/browser/safari.png" alt="Safari">
-					<div>Safari</div>
-				</a>
-			</li>
-			<li>
-				<a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-					<img src="assets/images/browser/ie.png" alt="">
-					<div>IE (9 & above)</div>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
+			
 							<!-- Warning Section Ends -->
-							<!-- Required Jquery -->
+                            <!-- Required Jquery -->
+                            <script>
+
+function totalBayar(){
+    
+    var jumlah= parseInt(document.getElementById("jumlah").value);
+    var harga= parseInt(document.getElementById("harga").value);
+
+
+    console.log(jumlah);
+    console.log(harga);
+
+    var total = document.getElementById("total_harga");
+    total.placeholder = jumlah*harga+"";
+    total.value=jumlah*harga;
+}
+
+</script>
 							<script type="text/javascript" src="<?php echo base_url(''); ?>vendor/assets/js/jquery/jquery.min.js"></script>
 							<script type="text/javascript" src="<?php echo base_url(''); ?>vendor/assets/js/jquery-ui/jquery-ui.min.js"></script>
 							<script type="text/javascript" src="<?php echo base_url(''); ?>vendor/assets/js/popper.js/popper.min.js"></script>
@@ -178,87 +154,7 @@
 							<script src="<?php echo base_url(''); ?>vendor/assets/js/pcoded.min.js"></script>
 							<script src="<?php echo base_url(''); ?>vendor/assets/js/vartical-demo.js"></script>
 							<script src="<?php echo base_url(''); ?>vendor/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-							<script>
-								function initAutocomplete() {
-									var map = new google.maps.Map(document.getElementById('map'), {
-										center: {
-											lat: -8.2230043,
-											lng: 114.3653102
-										},
-										zoom: 13,
-										mapTypeId: 'roadmap'
-									});
-
-									// Membuat Kotak pencarian terhubung dengan tampilan map
-									var input = document.getElementById('pac-input');
-									var searchBox = new google.maps.places.SearchBox(input);
-
-
-									var markers = [];
-									// Mengaktifkan detail pada suatu tempat ketika pengguna
-									// memilih salah satu dari daftar prediksi tempat 
-									searchBox.addListener('places_changed', function() {
-										var places = searchBox.getPlaces();
-
-										if (places.length == 0) {
-											return;
-										}
-
-										// menghilangkan marker tempat sebelumnya
-										markers.forEach(function(marker) {
-											marker.setMap(null);
-										});
-										markers = [];
-
-										// Untuk setiap tempat, dapatkan icon, nama dan tempat.
-										var bounds = new google.maps.LatLngBounds();
-										places.forEach(function(place) {
-											if (!place.geometry) {
-												console.log("Returned place contains no geometry");
-												return;
-											}
-											var icon = {
-												url: place.icon,
-												size: new google.maps.Size(71, 71),
-												origin: new google.maps.Point(0, 0),
-												anchor: new google.maps.Point(17, 34),
-												scaledSize: new google.maps.Size(25, 25)
-											};
-
-
-
-											// Membuat Marker untuk setiap tempat
-											markers.push(new google.maps.Marker({
-
-												map: map,
-												icon: icon,
-												title: place.name,
-												position: place.geometry.location,
-												drag: true
-
-											}));
-											var lat = place.geometry.location.lat();
-											var lng = place.geometry.location.lng();
-
-											if (place.geometry.viewport) {
-												bounds.union(place.geometry.viewport);
-												document.getElementById("latlong").value = lat + ',' + lng;
-												//document.getElementById('lng').value=lng; 
-											} else {
-												bounds.extend(place.geometry.location);
-
-											}
-										});
-										map.fitBounds(bounds);
-									});
-									google.maps.event.addListener(marker, 'drag', function() {
-										// ketika marker di drag, otomatis nilai latitude dan longitude
-										//menyesuaikan dengan posisi marker 
-										updateMarkerPosition(marker.getPosition());
-									});
-								}
-							</script>
-							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkE6oJvsyX4sRAw0QTt3R_gJClY0NtIFQ&libraries=places&callback=initAutocomplete" async defer></script>
+							
 </body>
 
 </html>
