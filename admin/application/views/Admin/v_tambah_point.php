@@ -74,15 +74,15 @@
 														<h4 class="sub-title">Form Event</h4>
 														<?php echo form_open_multipart(); ?>
 														<div class="form-group row">
-															<label class="col-sm-2 col-form-label">Nama Item</label>
+															<label class="col-sm-2 col-form-label">ID PERSONAL</label>
 															<div class="col-sm-10">
-																<input type="text" name="name_item" class="form-control" placeholder="masukkan nama item">
+																<input type="number" name="id_personal" class="form-control" placeholder="Masukkan Id Personal">
 															</div>
 														</div>
 														<div class="form-group row">
-															<label class="col-sm-2 col-form-label">Upload File</label>
+															<label class="col-sm-2 col-form-label">ID EVENT</label>
 															<div class="col-sm-10">
-																<input type="file" name="photo" class="form-control">
+															<input type="number" name="id_event" class="form-control" placeholder="Masukkan Id Event">
 															</div>
 														</div>
 														<div class="form-group row">
