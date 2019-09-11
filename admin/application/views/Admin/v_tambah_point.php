@@ -121,7 +121,7 @@
                                                         <div class="form-group row">
 															<label class="col-sm-2 col-form-label"> Total Point</label>
                                                             <div class="col-sm-2">
-																<input type="number" name="total_poin" id="total_poin" class="form-control" onchange="return totalpointlainnya()" required placeholder="masukkan total point">
+																<input type="number" name="total_poin" id="total_point" class="form-control" onchange="return totalpointlainnya()" required placeholder="masukkan total point">
 															</div>
 														</div>
 														<div class="sub-title"></div>
@@ -148,7 +148,29 @@
 
 			
 							<!-- Warning Section Ends -->
-                            <!-- Required Jquery -->
+							<!-- Required Jquery -->
+							
+							<script>
+
+function totalpoint(){
+    
+    var jumlah1= parseInt(document.getElementById("point_plastik").value);
+    var jumlah2= parseInt(document.getElementById("point_logam").value);
+    var jumlah3= parseInt(document.getElementById("point_lain").value);
+   
+
+
+    console.log(jumlah1);
+    console.log(jumlah2);
+    console.log(jumlah3);
+    
+
+    var total = document.getElementById("total_point");
+   total.placeholder = jumlah1+jumlah2+jumlah3+"";
+    total.value=jumlah1+jumlah2+jumlah3;
+}
+
+</script>
                             <script>
 
 function totalpointplastik(){
