@@ -374,7 +374,7 @@ class Admin extends CI_Controller
 	{
 		$data["status"] = '0';
 		$this->m_data->confirm_community_approved($data, $id_community);
-		redirect('Admin/v_community_approved');
+		redirect('Admin/community_approved');
 	}
 
 	public function community_not_approved()
@@ -389,7 +389,7 @@ class Admin extends CI_Controller
 	{
 		$data["status"] = '1';
 		$this->m_data->confirm_community_approved($data, $id_community);
-		redirect('Admin/v_community_not_approved');
+		redirect('Admin/community_not_approved');
 	}
 
 	public function event_approved()
