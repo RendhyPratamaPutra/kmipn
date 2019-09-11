@@ -136,15 +136,15 @@
 function totalpointplastik(){
     
     var jumlah= parseInt(document.getElementById("jumlah").value);
-    var harga= parseInt((10).value);
+   
 
 
     console.log(jumlah);
-    console.log(harga);
+    
 
     var total = document.getElementById("total_harga");
-    total.placeholder = jumlah*harga+"";
-    total.value=jumlah*harga;
+   total.placeholder = jumlah*10+"";
+    total.value=jumlah*10;
 }
 
 </script>
