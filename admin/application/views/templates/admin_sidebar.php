@@ -56,7 +56,20 @@
 												<span class="pcoded-mcaret"></span>
 											</a>
 										</li>
-
+										<li class=" ">
+											<a href="<?= base_url('Admin/event_approved'); ?>">
+												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Event Approved</span>
+												<span class="pcoded-mcaret"></span>
+											</a>
+										</li>
+										<li class=" ">
+											<a href="<?= base_url('Admin/event_non_approved'); ?>">
+												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Event Not Approved</span>
+												<span class="pcoded-mcaret"></span>
+											</a>
+										</li>
 									</ul>
 								</li>
 								
@@ -89,7 +102,7 @@
 									</a>
 									<ul class="pcoded-submenu">
 										<li>
-											<a href="?= base_url('Admin/tambah_point'); ?>">
+											<a href="?= base_url('Admin/tambah_voucher'); ?>">
 												<span class="pcoded-micon"><i class="ti-"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tambah Voucher</span>
 												<span class="pcoded-mcaret"></span>

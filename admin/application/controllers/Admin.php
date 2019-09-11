@@ -396,10 +396,44 @@ class Admin extends CI_Controller
         }
 	}
 	
-	public function tambah_point()
+	public function tambah_voucher()
 	{
 		$data['title'] = 'ADD POINT - BERSIHNESIA';	
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
-		$this->load->view('Admin/v_tambah_point', $data);
+		$this->load->view('Admin/v_tambah_voucher', $data);
 	}
+
+	public function event_approved()
+	{
+		$data['title'] = 'EVENT APPROVED - BERSIHNESIA';	
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['approved'] = $this->m_data->getapproved();
+        $data['community'] = $this->db->get('community')->result();
+		$this->load->view('Admin/v_event_approved', $data);
+	}
+
+	public function status_approved($id_event)
+    {
+        $data["status"] = '0';
+        $this->m_data->confirm_approved($data, $id_event);
+        redirect('Admin/event_approved');
+	}
+
+	public function event_non_approved()
+	{
+		$data['title'] = 'EVENT NON APPROVED - BERSIHNESIA';	
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['nonapproved'] = $this->m_data->getnonapproved();
+        $data['community'] = $this->db->get('community')->result();
+		$this->load->view('Admin/v_event_non_approved', $data);
+	}
+
+	public function status_non_approved($id_event)
+    {
+        $data["status"] = '1';
+        $this->m_data->confirm_approved($data, $id_event);
+        redirect('Admin/event_non_approved');
+	}
+
+	
 }
