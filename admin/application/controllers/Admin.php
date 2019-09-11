@@ -294,21 +294,21 @@ class Admin extends CI_Controller
 
 
 	// Community
-	public function community_list($activePage = 1)
-	{
-		// session login
-		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
-		$data['title'] = "PERSONAL LIST";
-		// pagination
-		$perpage = 2;
-		$startData = ($perpage * $activePage) - $perpage;
-		$data['total_rows'] = $this->m_data->get_all_community()->num_rows();
-		$data['pages'] = ceil($data['total_rows'] / $perpage);
-		$data['active'] = $activePage;
-		$data['community'] = $this->m_data->pagination_community($startData, $perpage)->result();
+	// public function community_list($activePage = 1)
+	// {
+	// 	// session login
+	// 	$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+	// 	$data['title'] = "PERSONAL LIST";
+	// 	// pagination
+	// 	$perpage = 2;
+	// 	$startData = ($perpage * $activePage) - $perpage;
+	// 	$data['total_rows'] = $this->m_data->get_all_community()->num_rows();
+	// 	$data['pages'] = ceil($data['total_rows'] / $perpage);
+	// 	$data['active'] = $activePage;
+	// 	$data['community'] = $this->m_data->pagination_community($startData, $perpage)->result();
 
-		$this->load->view('Admin/v_community_list', $data);
-	}
+	// 	$this->load->view('Admin/v_community_list', $data);
+	// }
 
 	public function community_search($keyword = null)
 	{
@@ -357,13 +357,71 @@ class Admin extends CI_Controller
 		$this->load->view('Tables/tb_community', $data);
 	}
 	// end Community
-	public function community_list_()
+
+
+
+
+	public function community_approved()
 	{
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
-		$data['title'] = "COMMUNITY LIST";
-		$data['community'] = $this->m_data->get_community()->result();
+		$data['title'] = "COMMUNITY APPROVED";
+		$data['community_approved'] = $this->m_data->get_community_approved();
 
-		$this->load->view('Admin/v_community_list', $data);
+		$this->load->view('Admin/v_community_approved', $data);
+	}
+
+	public function status_community_approved($id_community)
+	{
+		$data["status"] = '0';
+		$this->m_data->confirm_community_approved($data, $id_community);
+		redirect('Admin/v_community_approved');
+	}
+
+	public function community_not_approved()
+	{
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['title'] = "COMMUNITY NOT APPROVED";
+		$data['community_not_approved'] = $this->m_data->get_community_not_approved();
+		$this->load->view('Admin/v_community_not_approved', $data);
+	}
+
+	public function status_not_community_approved($id_community)
+	{
+		$data["status"] = '1';
+		$this->m_data->confirm_community_approved($data, $id_community);
+		redirect('Admin/v_community_not_approved');
+	}
+
+	public function event_approved()
+	{
+		$data['title'] = 'EVENT APPROVED - BERSIHNESIA';
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['approved'] = $this->m_data->getapproved();
+		$data['community'] = $this->db->get('community')->result();
+		$this->load->view('Admin/v_event_approved', $data);
+	}
+
+	public function status_approved($id_event)
+	{
+		$data["status"] = '0';
+		$this->m_data->confirm_approved($data, $id_event);
+		redirect('Admin/event_approved');
+	}
+
+	public function event_non_approved()
+	{
+		$data['title'] = 'EVENT NON APPROVED - BERSIHNESIA';
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['nonapproved'] = $this->m_data->getnonapproved();
+		$data['community'] = $this->db->get('community')->result();
+		$this->load->view('Admin/v_event_non_approved', $data);
+	}
+
+	public function status_non_approved($id_event)
+	{
+		$data["status"] = '1';
+		$this->m_data->confirm_approved($data, $id_event);
+		redirect('Admin/event_non_approved');
 	}
 
 	public function request()
@@ -407,37 +465,5 @@ class Admin extends CI_Controller
 		$data['title'] = 'ADD EVENT - BERSIHNESIA';
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
 		$this->load->view('Admin/v_tambah_point', $data);
-	}
-
-	public function event_approved()
-	{
-		$data['title'] = 'EVENT APPROVED - BERSIHNESIA';
-		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
-		$data['approved'] = $this->m_data->getapproved();
-		$data['community'] = $this->db->get('community')->result();
-		$this->load->view('Admin/v_event_approved', $data);
-	}
-
-	public function status_approved($id_event)
-	{
-		$data["status"] = '0';
-		$this->m_data->confirm_approved($data, $id_event);
-		redirect('Admin/event_approved');
-	}
-
-	public function event_non_approved()
-	{
-		$data['title'] = 'EVENT NON APPROVED - BERSIHNESIA';
-		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
-		$data['nonapproved'] = $this->m_data->getnonapproved();
-		$data['community'] = $this->db->get('community')->result();
-		$this->load->view('Admin/v_event_non_approved', $data);
-	}
-
-	public function status_non_approved($id_event)
-	{
-		$data["status"] = '1';
-		$this->m_data->confirm_approved($data, $id_event);
-		redirect('Admin/event_non_approved');
 	}
 }

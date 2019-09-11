@@ -1,9 +1,11 @@
 <?php
 class M_data extends CI_Model{
     public $id_event  = 'id_event';
+    public $id_community  = 'id_community';
     public $tgl = 'tgl_pesan';
     public $jumlah = 'jumlah';
     public $tabel_event = 'tb_event';
+    public $tabel_community = 'community';
     public $gambar = "default.jpg";
     public $id_barang;
     public $nama_barang;
@@ -258,6 +260,19 @@ function delete_reedem($id_act)
         return $this->db->query($query)->result_array();
     }
 
+    public function get_community_approved() {
+
+        $query = "SELECT `community`.*  FROM `community`   WHERE `community`.`status`='1'";
+
+        return $this->db->query($query)->result_array();
+    }
+    public function get_community_not_approved() {
+
+        $query = "SELECT `community`.*  FROM `community`   WHERE `community`.`status`='0'";
+
+        return $this->db->query($query)->result_array();
+    }
+
     function confirm_approved($data, $id_event)
     {
         $confirm_approved = $this->db->select("*")->from($this->tabel_event)->where("id_event", $id_event)->get()->row();
@@ -265,6 +280,15 @@ function delete_reedem($id_act)
         $this->db->where("id_event", $id_event);
         $this->db->update($this->tabel_event, $data);
         return $confirm_approved->id_event;
+    }
+
+    function confirm_community_approved($data, $id_community)
+    {
+        $confirm_community_approved = $this->db->select("*")->from($this->tabel_community)->where("id_community", $id_community)->get()->row();
+        $this->db->query("Update community set `community`.`status`='" . $data . "' where id_community='" . $id_community . "'", FALSE);
+        $this->db->where("id_community", $id_community);
+        $this->db->update($this->tabel_community, $data);
+        return $confirm_community_approved->id_community;
     }
 
  

@@ -84,9 +84,16 @@
 									</a>
 								</li>
 								<li>
-									<a href="<?= base_url('Admin/community_list'); ?>">
+									<a href="<?= base_url('Admin/community_approved'); ?>">
 										<span class="pcoded-micon"><i class="ti-map-alt"></i><b>FC</b></span>
-										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Komunitas</span>
+										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Komunitas Setuju</span>
+										<span class="pcoded-mcaret"></span>
+									</a>
+								</li>
+								<li>
+									<a href="<?= base_url('Admin/community_not_approved'); ?>">
+										<span class="pcoded-micon"><i class="ti-map-alt"></i><b>FC</b></span>
+										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Komunitas Tidak</span>
 										<span class="pcoded-mcaret"></span>
 									</a>
 								</li>
