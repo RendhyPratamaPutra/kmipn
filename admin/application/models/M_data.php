@@ -1,5 +1,17 @@
 <?php
 class M_data extends CI_Model{
+    public $id_event  = 'id_event';
+    public $tgl = 'tgl_pesan';
+    public $jumlah = 'jumlah';
+    public $tabel_event = 'tb_event';
+    public $gambar = "default.jpg";
+    public $id_barang;
+    public $nama_barang;
+    public $jenis_barang;
+    public $jenis_kertas;
+    public $harga_barang;
+
+   
 	public function __construct()
 {
 parent::__construct();
@@ -232,4 +244,28 @@ function delete_reedem($id_act)
 
         return $this->db->query($query)->result_array();
     }
+    public function getapproved() {
+
+        $query = "SELECT `tb_event`.* , `community`.`name_community`, `community`.`address` as `adress_community` FROM `tb_event` JOIN `community` ON `tb_event`.`id_community` = `community`.`id_community` WHERE `tb_event`.`status`='1'";
+
+        return $this->db->query($query)->result_array();
+    }
+
+    public function getnonapproved() {
+
+        $query = "SELECT `tb_event`.* , `community`.`name_community`, `community`.`address` as `adress_community` FROM `tb_event` JOIN `community` ON `tb_event`.`id_community` = `community`.`id_community` WHERE `tb_event`.`status`='0'";
+
+        return $this->db->query($query)->result_array();
+    }
+
+    function confirm_approved($data, $id_event)
+    {
+        $confirm_approved = $this->db->select("*")->from($this->tabel_event)->where("id_event", $id_event)->get()->row();
+        $this->db->query("Update tb_event set `tb_event`.`status`='" . $data . "' where id_event='" . $id_event . "'", FALSE);
+        $this->db->where("id_event", $id_event);
+        $this->db->update($this->tabel_event, $data);
+        return $confirm_approved->id_event;
+    }
+
+ 
 }
