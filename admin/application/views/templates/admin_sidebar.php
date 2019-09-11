@@ -12,14 +12,14 @@
 									</a>
 								</li>
 								<li class="pcoded-hasmenu">
-								<a href="javascript:void(0)">
+								<a href="<?= base_url('Admin/request_reedem'); ?>">
 										<span class="pcoded-micon"><i class="ti-email"></i><b>FC</b></span>
 										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Request</span>
 										<span class="pcoded-mcaret"></span>
 									</a>
-									<ul class="pcoded-submenu">
+									<!-- <ul class="pcoded-submenu">
 										<li class=" ">
-											<a href="#">
+											<a href="">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Voucher</span>
 												<span class="pcoded-mcaret"></span>
@@ -33,7 +33,7 @@
 											</a>
 										</li>
 
-									</ul>
+									</ul> -->
 								</li>
 								<li class="pcoded-hasmenu">
 									<a href="javascript:void(0)">
@@ -89,7 +89,7 @@
 									</a>
 									<ul class="pcoded-submenu">
 										<li>
-											<a href="accordion.html">
+											<a href="?= base_url('Admin/tambah_point'); ?>">
 												<span class="pcoded-micon"><i class="ti-"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tambah Voucher</span>
 												<span class="pcoded-mcaret"></span>

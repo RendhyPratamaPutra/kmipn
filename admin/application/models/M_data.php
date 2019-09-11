@@ -18,21 +18,16 @@ function cek_login($email,$password){
     $data = $this->db->get('personal')->row_array();
     return $data;
 }
-
-// Personal
 function get_all_personal()
 {
     return $this->db->get('personal');
 }
-
 function pagination_personal($dataStart, $perpage){
         // return  $this->db->get('personal');
     $this->db->select('*');
     $this->db->from('personal');
     $this->db->limit($perpage, $dataStart);
     // $this->db->limit(2, 1);
-
-
     return $this->db->get();
 }
 
@@ -224,5 +219,17 @@ function get_req()
 		return $this->db->get_where('community', ['status' => 0]);
 
 }
+
+function delete_reedem($id_act)
+    {
+        $this->db->where('id_act', $id_act);
+        $this->db->delete('act_reedem');
+    }
+
+    public function getreedem() {
+
+        $query = "SELECT `act_reedem`.* , `item_reedem`.`name_item`, `item_reedem`.`category` FROM `act_reedem` JOIN `item_reedem` ON `act_reedem`.`id_item` = `item_reedem`.`id_item`";
+
+        return $this->db->query($query)->result_array();
+    }
 }
-?>
