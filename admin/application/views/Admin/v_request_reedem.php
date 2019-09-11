@@ -74,9 +74,9 @@
 																<th>NAME </th>
 																<th>NO HP</th>
 																<th>ALAMAT PENGIRIMAN</th>
-																<th>JUMLAH REEDEM</th>
-																<th>REEDEM POINT</th>
-																<th>TANGGAL REEDEM</th>
+																<th>JUMLAH</th>
+																<th>COST</th>
+																<th>TANGGAL</th>
 																<th>NAMA ITEM</th>
 																<th>CATEGORY</th>
 																<th>ACTION</th>
