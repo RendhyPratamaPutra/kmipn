@@ -359,7 +359,15 @@ class Admin extends CI_Controller
 	// end Community
 
 
-
+	// draw Trash
+	public function draw_trash()
+	{
+		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['title'] = "DRAW TRASH";
+		// $data['trans_sampah'] = $this->db->get('trans_sampah')->result();
+		$data['trans_sampah'] = $this->m_data->get_draw_req()->result();
+		$this->load->view('Admin/v_draw_req_list', $data);
+	}
 
 	public function community_approved()
 	{
@@ -496,10 +504,29 @@ class Admin extends CI_Controller
 		$this->load->view('Admin/v_tambah_voucher', $data);
 	}
 
-	public function tambah_point()
+	public function tambah_point($id_trans_sampah)
 	{
 		$data['title'] = 'ADD EVENT - BERSIHNESIA';
 		$data['user'] = $this->db->get_where('personal', ['email' => $this->session->userdata('email')])->row_array();
+		$data['trans_sampah'] = $this->db->get_where('trans_sampah', ['id_trans_sampah' => $id_trans_sampah])->row_array();
 		$this->load->view('Admin/v_tambah_point', $data);
+	}
+
+	function add_point()
+	{
+		$id_trans_sampah = $this->input->post('id_trans_sampah');
+		$id_personal = $this->input->post('id_personal');
+		$total_point = $this->input->post('total_point');
+
+		$data = array(
+			'id_trans_sampah' => $id_trans_sampah,
+			'id_personal' => $id_personal,
+			'total_point' => $total_point
+		);
+		$this->m_data->add_event($data, 'trans_point');
+		echo "<script>
+                alert('Point Ditambahkan!');
+                </script>";
+		echo '<script>window.location="draw_trash";</script>';
 	}
 }

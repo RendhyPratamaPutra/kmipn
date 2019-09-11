@@ -72,66 +72,58 @@
 													</div>
 													<div class="card-block">
 														<h4 class="sub-title">Form Event</h4>
-														<?php echo form_open_multipart(); ?>
+														<?php echo form_open_multipart('Admin/add_point'); ?>
 														<input type="hidden" name="id_trans_sampah" value="">
 														<div class="form-group row">
 															<label class="col-sm-2 col-form-label">ID</label>
 															<div class="col-sm-5">
-																<input type="number" name="id_personal" class="form-control" placeholder="Masukkan Id Personal">
-															</div>
-														</div>
-														<div class="form-group row">
-															<label class="col-sm-2 col-form-label">NAMA</label>
-															<div class="col-sm-5">
-																<input type="number" name="nama_personal" class="form-control" placeholder="Masukkan Id Personal">
+																<input type="number" name="id_personal" class="form-control" placeholder="Masukkan Id Personal" value="<?= $trans_sampah['id_personal']; ?>">
 															</div>
 														</div>
 														<div class="form-group row">
 															<label class="col-sm-2 col-form-label">ID EVENT</label>
 															<div class="col-sm-5">
-															<input type="number" name="id_event" class="form-control" placeholder="Masukkan Id Event">
+															<input type="number" name="id_event" class="form-control" placeholder="Masukkan Id Event" value="<?= $trans_sampah['id_event']; ?>">
 															</div>
 														</div>
 														<div class="form-group row">
 															<label class="col-sm-2 col-form-label">Sampah Plastik</label>
 															<div class="col-sm-2">
-																<input type="number" name="sampah_plastik" id="sampah_plastik" class="form-control" onchange="return totalpointplastik()" required placeholder="masukkan total point">
+																<input type="number" name="sampah_plastik" id="sampah_plastik" class="form-control" onkeyup="totalpoint();" required placeholder="masukkan total point" value="<?= $trans_sampah['sampah_plastik']; ?>">
 															</div>
 															<div class="col-sm-1">
-																<input type="text" id="point_plastik" name="point_plastik" class="form-control" readonly> <i></i>
+																<input type="text" id="point_plastik" name="point_plastik" onkeyup="totalpoint();" class="form-control" readonly> <i></i>
 															</div>
 														</div>
                                                         <div class="form-group row">
 															<label class="col-sm-2 col-form-label">Sampah Logam</label>
                                                             <div class="col-sm-2">
-																<input type="number" name="sampah_logam" id="sampah_logam" class="form-control" onchange="return totalpointlogam()" required placeholder="masukkan total point">
+																<input type="number" name="sampah_logam" id="sampah_logam" class="form-control" onkeyup="totalpoint();" required placeholder="masukkan total point" value="<?= $trans_sampah['sampah_logam']; ?>">
 															</div>
 															<div class="col-sm-1">
-																<input type="text" id="point_logam" name="point_logam" class="form-control" readonly> <i></i>
+																<input type="text" id="point_logam" name="point_logam" onkeyup="totalpoint();" class="form-control" readonly> <i></i>
 															</div>
                                                         </div>
                                                         <div class="form-group row">
 															<label class="col-sm-2 col-form-label">Sampah Lainnya</label>
                                                             <div class="col-sm-2">
-																<input type="number" name="sampah_lain" id="sampah_lain" class="form-control" onchange="return totalpointlainnya()" required placeholder="masukkan total point">
+																<input type="number" name="sampah_lain" id="sampah_lain" class="form-control" onkeyup="totalpoint();" required placeholder="masukkan total point" value="<?= $trans_sampah['sampah_lain']; ?>">
 															</div>
 															<div class="col-sm-1">
-																<input type="text" id="point_lain" name="point_lain" class="form-control" readonly> <i></i>
+																<input type="text" id="point_lain" name="point_lain" onkeyup="totalpoint();" class="form-control" readonly> <i></i>
 															</div>
                                                         </div>
                                                         <div class="form-group row">
 															<label class="col-sm-2 col-form-label"> Total Point</label>
                                                             <div class="col-sm-2">
-																<input type="number" name="total_poin" id="total_point" class="form-control" onchange="return totalpointlainnya()" required placeholder="masukkan total point">
+																<input type="number" name="total_point" id="total_point" class="form-control"  required placeholder="masukkan total point">
 															</div>
 														</div>
 														<div class="sub-title"></div>
 														<div class="form-group row justify-content-end">
-															<div class="col-sm-1">
-																<a class="btn btn-danger btn-round" href="">Decline</a>
-															</div>
+														
 															<div class="col-sm-1 mr-4">
-																<button class="btn btn-success btn-round">Confirm</button>																
+																<button type="submit" class="btn btn-success btn-round">Confirm</button>																
 															</div>
 															
 														</div>
@@ -152,25 +144,23 @@
 							<!-- Required Jquery -->
 							
 							<script>
+function totalpoint() {
+      var jumlah1 = document.getElementById('sampah_plastik').value;
+	  total.placeholder = jumlah1*50+"";
+    total.value=jumlah1*50;
+      var jumlah2 = document.getElementById('sampah_logam').value;
+	  total.placeholder = jumlah2*50+"";
+    total.value=jumlah2*50;
+      var jumlah3 = document.getElementById('sampah_lain').value;
+	  total.placeholder = jumlah3*50+"";
+    total.value=jumlah3*50;
 
-function totalpoint(){
-    
-    var jumlah1= parseInt(document.getElementById("point_plastik").value);
-    var jumlah2= parseInt(document.getElementById("point_logam").value);
-    var jumlah3= parseInt(document.getElementById("point_lain").value);
-   
 
-
-    console.log(jumlah1);
-    console.log(jumlah2);
-    console.log(jumlah3);
-    
-
-    var total = document.getElementById("total_point");
-   total.placeholder = jumlah1+jumlah2+jumlah3+"";
-    total.value=jumlah1+jumlah2+jumlah3;
+      var result = parseInt(jumlah1) + parseInt(jumlah2) + parseInt(jumlah3);
+      if (!isNaN(result)) {
+         document.getElementById('total_point').value = result;
+      }
 }
-
 </script>
                             <script>
 
