@@ -24,7 +24,6 @@ class personal extends CI_Controller
         header('Content-Type: application/json');
         echo $this->Personal_model->json();
     }
-
     // public function read($id)
     // {
     //     $row = $this->Personal_model->get_by_id($id);

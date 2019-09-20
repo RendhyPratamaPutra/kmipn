@@ -12,14 +12,14 @@
 									</a>
 								</li>
 								<li class="pcoded-hasmenu">
-								<a href="javascript:void(0)">
+								<a href="<?= base_url('Admin/request_reedem'); ?>">
 										<span class="pcoded-micon"><i class="ti-email"></i><b>FC</b></span>
 										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Request</span>
 										<span class="pcoded-mcaret"></span>
 									</a>
-									<ul class="pcoded-submenu">
+									<!-- <ul class="pcoded-submenu">
 										<li class=" ">
-											<a href="#">
+											<a href="">
 												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Voucher</span>
 												<span class="pcoded-mcaret"></span>
@@ -33,7 +33,7 @@
 											</a>
 										</li>
 
-									</ul>
+									</ul> -->
 								</li>
 								<li class="pcoded-hasmenu">
 									<a href="javascript:void(0)">
@@ -56,7 +56,20 @@
 												<span class="pcoded-mcaret"></span>
 											</a>
 										</li>
-
+										<li class=" ">
+											<a href="<?= base_url('Admin/event_approved'); ?>">
+												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Event Approved</span>
+												<span class="pcoded-mcaret"></span>
+											</a>
+										</li>
+										<li class=" ">
+											<a href="<?= base_url('Admin/event_non_approved'); ?>">
+												<span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Event Not Approved</span>
+												<span class="pcoded-mcaret"></span>
+											</a>
+										</li>
 									</ul>
 								</li>
 								
@@ -71,9 +84,16 @@
 									</a>
 								</li>
 								<li>
-									<a href="<?= base_url('Admin/community_list'); ?>">
+									<a href="<?= base_url('Admin/community_approved'); ?>">
 										<span class="pcoded-micon"><i class="ti-map-alt"></i><b>FC</b></span>
-										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Komunitas</span>
+										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Komunitas Setuju</span>
+										<span class="pcoded-mcaret"></span>
+									</a>
+								</li>
+								<li>
+									<a href="<?= base_url('Admin/community_not_approved'); ?>">
+										<span class="pcoded-micon"><i class="ti-map-alt"></i><b>FC</b></span>
+										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Komunitas Tidak</span>
 										<span class="pcoded-mcaret"></span>
 									</a>
 								</li>
@@ -89,9 +109,16 @@
 									</a>
 									<ul class="pcoded-submenu">
 										<li>
-											<a href="accordion.html">
+											<a href="<?= base_url('Admin/tambah_voucher'); ?>">
 												<span class="pcoded-micon"><i class="ti-"></i></span>
 												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tambah Voucher</span>
+												<span class="pcoded-mcaret"></span>
+											</a>
+											</li>
+											<li>
+											<a href="<?= base_url('Admin/tambah_point'); ?>">
+												<span class="pcoded-micon"><i class="ti-"></i></span>
+												<span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tambah Point</span>
 												<span class="pcoded-mcaret"></span>
 											</a>
 											</li>
@@ -151,9 +178,16 @@
 									</a>
 								</li> -->
 								<li>
-									<a href="map-google.html">
+									<a href="<?= base_url('Admin/report_lokasi'); ?>">
 										<span class="pcoded-micon"><i class="ti-map-alt"></i><b>FC</b></span>
-										<span class="pcoded-mtext" data-i18n="nav.form-components.main">Maps</span>
+										<span class="pcoded-mtext" data-i18n="nav.form-components.main">REPORT BELUM DISELEKSI</span>
+										<span class="pcoded-mcaret"></span>
+									</a>
+								</li>
+								<li>
+									<a href="<?= base_url('Admin/report_lokasi_seleksi'); ?>">
+										<span class="pcoded-micon"><i class="ti-map-alt"></i><b>FC</b></span>
+										<span class="pcoded-mtext" data-i18n="nav.form-components.main">REPORT TERSELEKSI</span>
 										<span class="pcoded-mcaret"></span>
 									</a>
 								</li>
